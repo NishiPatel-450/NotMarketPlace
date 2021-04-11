@@ -1,0 +1,280 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+
+        <title>Notes Marketplace</title>
+        <link rel="stylesheet" href="css/Bootstrap/bootstrap.min.css">
+        
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+            
+        <link rel="shortcut icon" href="img/favicon.ico">
+                
+        <link rel="stylesheet" href="css/font-awesome/css/font-awesome.min.css">
+
+        <link rel="stylesheet" href="css/style.min.css">
+        
+        <link rel="stylesheet" href="css/responsive.css">
+  
+    </head>
+<body>
+    
+   <header>
+        <nav class="navbar navbar-fixed-top">
+            <div class="container">
+                <div class="site-nav-wrapper">
+                    
+                    <div class="navbar-header">
+                        
+                        <!--Mobile menu Open Button-->
+                        <span id="mobile-nav-open-btn">&#9776;</span>
+                       
+                        <!--Logo-->
+                        <a href="index.html" class="navbar-brand smooth-scroll">
+                            <img src ="Images/img/top-logo.png" alt="logo">
+                        </a>
+                    </div>
+                    
+                    <!--Main Menu-->
+                    <div class="container">
+                        <div class="collapse navbar-collapse">
+                            <li>
+                                <ul class="nav navbar-nav navbar-right">
+                                    <li><a href="admin_dashboard.html">Dashboard</a></li>
+                                    <li class="dropdown">
+                                    <a href="" id="noteslink">Notes</a>
+                                        <ul>
+                                        
+                                                <li><a href="note_under_review.html" class="link menulink">Notes under Review</a></li>
+												<li><a href="admin_dashboard.html" class="link menulink">Publish Notes</a></li>
+												<li><a href="download_notes.html" class="link menulink">Download Notes</a></li>
+												<li><a href="rejected_notes.html" class="link menulink">Rejected Notes</a></li>    
+                                        </ul>
+                                    </li>
+									
+                                    <li><a href="memebers.html">Member</a></li>
+                                    <li><a href="memebers.html">Reportes</a></li>
+                                    <li><a href="memebers.html">Settings</a></li>
+                                   	<li class="dropdown">
+
+                                        <a href="#"><img src="Images/img/user-img.png" /></a>
+                                            <ul>
+											   <li><a href="profile.html" class="link menulink">My Profile</a></li>
+												<li><a href="change_password.html" class="link menulink">Change Password</a></li>
+												<li><a href="download_notes.html" class="link menulink">Download Notes</a></li>
+												<li class="logout"><a href="login.html" class="link">Logout</a></li>
+                                            
+                                            </ul>
+                                    </li>
+                                        <li>
+                                        	<div id="home-btn">
+												<a class="btn" href="login.html" title="Login" role="button">Logout</a>
+											</div>
+                                        </li>
+                                    
+                                </ul>
+                            </li>
+                        </div>
+                    </div>
+                    
+                    <!--Mobile menu-->
+                    <div id="mobile-nav">
+                        <span id="mobile-nav-close-btn">&times;</span>
+                        <div id="mobile-nav-content">
+                          <ul class="nav navbar-nav navbar-right">
+                                    <li><a href="admin_dashboard.html">Dashboard</a></li>
+                                    <li class="dropdown">
+                                    <a href="" id="noteslink">Notes</a>
+                                        <ul>
+                                        
+                                                <li><a href="note_under_review.html" class="link menulink">Notes under Review</a></li>
+												<li><a href="admin_dashboard.html" class="link menulink">Publish Notes</a></li>
+												<li><a href="download_notes.html" class="link menulink">Download Notes</a></li>
+												<li><a href="rejected_notes.html" class="link menulink">Rejected Notes</a></li>    
+                                        </ul>
+                                    </li>
+									
+                                    <li><a href="memebers.html">Member</a></li>
+                                    <li><a href="memebers.html">Reportes</a></li>
+                                    <li><a href="memebers.html">Settings</a></li>
+                                   	<li class="dropdown">
+
+                                        <a href="#"><img src="Images/img/user-img.png" /></a>
+                                            <ul>
+											   <li><a href="profile.html" class="link menulink">My Profile</a></li>
+												<li><a href="change_password.html" class="link menulink">Change Password</a></li>
+												<li><a href="download_notes.html" class="link menulink">Download Notes</a></li>
+												<li class="logout"><a href="login.html" class="link">Logout</a></li>
+                                            
+                                            </ul>
+                                    </li>
+                                        <li>
+                                        	<div id="home-btn">
+												<a class="btn" href="login.html" title="Login" role="button">Logout</a>
+											</div>
+                                        </li>
+                                    
+                                </ul>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </nav>
+    </header>
+     
+    <section id="dashboard">
+        <div class="heading-bar container">
+            <div class="row">
+                <div class="col-md-6 col-sm-5 col-xs-6">
+                    <h3 class="row">Members</h3>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <form role="form" class="row form1">
+                        <div class="col-md-9 col-sm-9 col-xs-7 form-group searchinput">
+                            <img src="Images/img/search-icon.png" class="form-control-feedback">
+                            <input type="text" class="form-control" placeholder="Search"/>
+                        </div>
+                        <div class="col-md-2 col-sm-2 col-xs-2">
+                            <button class="btn">SEARCH</button>    
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>        
+        <div class="sold-table-list">
+            <div class="container">
+                <div class="row">
+                    <table class="table">
+                        <tr>
+                            <th>SR NO.</th>
+                            <th>FIRST NAME</th>
+                            <th>LAST NAME</th>
+                            <th>EMAIL</th>
+                            <th>JOINING DATE</th>
+                            <th>UNDER REVIEW NOTES</th>
+                            <th>PUBLISHED NOTES</th>
+                            <th>DOWNLOADED NOTES</th>
+                            <th>TOTAL EXPENSES</th>
+                            <th>TOTAL EARNINGS</th>
+                            <th></th>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Khayati</td>
+                            <td>Patel</td>
+                            <td>khayatipatel@gmail.com</td>
+                            <td>09-10-2020</td>
+                            <td class="titile-text">19</td>
+                            <td class="titile-text">10</td>
+                            <td class="titile-text">22</td>
+                            <td class="titile-text">$220</td>
+                            <td>$177</td>
+                            <td><img src="Images/img/dots.png"></td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Rahul</td>
+                            <td>Shah</td>
+                            <td>rahulshah@gmail.com</td>
+                            <td>10-10-2020</td>
+                            <td class="titile-text">4</td>
+                            <td class="titile-text">5</td>
+                            <td class="titile-text">4</td>
+                            <td class="titile-text">$220</td>
+                            <td>$177</td>
+                            <td><img src="Images/img/dots.png"></td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Suman</td>
+                            <td>Trivedi</td>
+                            <td>sumantrivedi@gmail.com</td>
+                            <td>11-10-2020</td>
+                            <td class="titile-text">12</td>
+                            <td class="titile-text">11</td>
+                            <td class="titile-text">17</td>
+                            <td class="titile-text">$886</td>
+                            <td>$978</td>
+                            <td><img src="Images/img/dots.png"></td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>Raj</td>
+                            <td>Malhotra</td>
+                            <td>rajmalhotra77@gmail.com</td>
+                            <td>12-10-2020</td>
+                            <td class="titile-text">2</td>
+                            <td class="titile-text">123</td>
+                            <td class="titile-text">28</td>
+                            <td class="titile-text">$1284</td>
+                            <td>$15254</td>
+                            <td><img src="Images/img/dots.png"></td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>Niya</td>
+                            <td>Patel</td>
+                            <td>niyapatel12@gmail.com</td>
+                            <td>13-10-2020</td>
+                            <td class="titile-text">20</td>
+                            <td class="titile-text">1</td>
+                            <td class="titile-text">0</td>
+                            <td class="titile-text">$0</td>
+                            <td>$69</td>
+                            <td><img src="Images/img/dots.png"></td>
+                        </tr>
+                  </table>
+                    <div class="popup">
+                        <ul><li>Download</li></ul>
+                    </div>
+                </div>  
+                
+            </div>
+        </div>
+      
+        
+        <div class="container page" aria-label="Page navigation example">
+            <ul class="pagination col-md-12 col-sm-12 col-xs-12">
+                <li><a class="page-link-img" href="#"><img src="Images/img/left-arrow.png"></a></li>
+                <li><a class="page-link" href="#">1</a></li>
+                <li><a class="page-link" href="#">2</a></li>
+                <li><a class="page-link" href="#">3</a></li>
+                <li><a class="page-link" href="#">4</a></li>
+                <li><a class="page-link" href="#">5</a></li>
+                <li><a class="page-link-img" href="#"><img src="Images/img/right-arrow.png"></a></li>
+            </ul>
+        </div>
+    </section>
+    
+    <hr>   
+    <footer id="footer"> 
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-sm-6 col-xs-6">
+                    <p>Copyright &copy; Tatvasoft All right reserved.</p>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-6 text-right">
+                    <ul class="social-list">
+                        <li><a href="https://www.facebook.com/"><img src="Images/img/facebook.png" style="margin-top: 9px"></a></li>
+                        <li><a href="https://twitter.com/"><img src="Images/img/twitter.png" style="margin-top: 9px"></a></li>
+                        <li><a href="https://www.linkedin.com/"><img src="Images/img/linkedin.png" style="margin-top: 9px"></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+        
+    <!--Scripts-->
+    <script src="js/jquery.js"></script>
+
+    <script src="js/Bootstrap/bootstrap.min.js"></script>
+    
+    <script src="js/easing/easing.min.js"></script>
+    
+    <script src="js/script.js"></script>
+    
+    </body>
+    
+</html>

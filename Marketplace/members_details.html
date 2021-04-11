@@ -1,0 +1,304 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+
+        <title>Notes Marketplace</title>
+        <link rel="stylesheet" href="css/Bootstrap/bootstrap.min.css">
+        
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+            
+        <link rel="shortcut icon" href="Images/img/favicon.ico">
+                
+        <link rel="stylesheet" href="css/font-awesome/css/font-awesome.min.css">
+
+        <link rel="stylesheet" href="css/style.min.css">
+        
+        <link rel="stylesheet" href="css/responsive.css">
+  
+    </head>
+<body>
+    
+  <!--Header-->
+    <header>
+        <nav class="navbar navbar-fixed-top">
+            <div class="container">
+                <div class="site-nav-wrapper">
+                    
+                    <div class="navbar-header">
+                        
+                        <!--Mobile menu Open Button-->
+                        <span id="mobile-nav-open-btn">&#9776;</span>
+                       
+                        <!--Logo-->
+                        <a href="index.html" class="navbar-brand smooth-scroll">
+                            <img src ="Images/img/top-logo.png" alt="logo">
+                        </a>
+                    </div>
+                    
+                    <!--Main Menu-->
+                    <div class="container">
+                        <div class="collapse navbar-collapse">
+                            <li>
+                                <ul class="nav navbar-nav navbar-right">
+                                    <li><a href="admin_dashboard.html">Dashboard</a></li>
+                                    <li class="dropdown">
+                                    <a href="" id="noteslink">Notes</a>
+                                        <ul>
+                                        
+                                                <li><a href="note_under_review.html" class="link menulink">Notes under Review</a></li>
+												<li><a href="admin_dashboard.html" class="link menulink">Publish Notes</a></li>
+												<li><a href="download_notes.html" class="link menulink">Download Notes</a></li>
+												<li><a href="rejected_notes.html" class="link menulink">Rejected Notes</a></li>    
+                                        </ul>
+                                    </li>
+									
+                                    <li><a href="memebers.html">Member</a></li>
+                                    <li><a href="memebers.html">Reportes</a></li>
+                                    <li><a href="memebers.html">Settings</a></li>
+                                   	<li class="dropdown">
+
+                                        <a href="#"><img src="Images/img/user-img.png" /></a>
+                                            <ul>
+											   <li><a href="profile.html" class="link menulink">My Profile</a></li>
+												<li><a href="change_password.html" class="link menulink">Change Password</a></li>
+												<li><a href="download_notes.html" class="link menulink">Download Notes</a></li>
+												<li class="logout"><a href="login.html" class="link">Logout</a></li>
+                                            
+                                            </ul>
+                                    </li>
+                                        <li>
+                                        	<div id="home-btn">
+												<a class="btn" href="login.html" title="Login" role="button">Logout</a>
+											</div>
+                                        </li>
+                                    
+                                </ul>
+                            </li>
+                        </div>
+                    </div>
+                    
+                    <!--Mobile menu-->
+                    <div id="mobile-nav">
+                        <span id="mobile-nav-close-btn">&times;</span>
+                        <div id="mobile-nav-content">
+                          <ul class="nav navbar-nav navbar-right">
+                                    <li><a href="admin_dashboard.html">Dashboard</a></li>
+                                    <li class="dropdown">
+                                    <a href="" id="noteslink">Notes</a>
+                                        <ul>
+                                        
+                                                <li><a href="note_under_review.html" class="link menulink">Notes under Review</a></li>
+												<li><a href="admin_dashboard.html" class="link menulink">Publish Notes</a></li>
+												<li><a href="download_notes.html" class="link menulink">Download Notes</a></li>
+												<li><a href="rejected_notes.html" class="link menulink">Rejected Notes</a></li>    
+                                        </ul>
+                                    </li>
+									
+                                    <li><a href="memebers.html">Member</a></li>
+                                    <li><a href="memebers.html">Reportes</a></li>
+                                    <li><a href="memebers.html">Settings</a></li>
+                                   	<li class="dropdown">
+
+                                        <a href="#"><img src="Images/img/user-img.png" /></a>
+                                            <ul>
+											   <li><a href="profile.html" class="link menulink">My Profile</a></li>
+												<li><a href="change_password.html" class="link menulink">Change Password</a></li>
+												<li><a href="download_notes.html" class="link menulink">Download Notes</a></li>
+												<li class="logout"><a href="login.html" class="link">Logout</a></li>
+                                            
+                                            </ul>
+                                    </li>
+                                        <li>
+                                        	<div id="home-btn">
+												<a class="btn" href="login.html" title="Login" role="button">Logout</a>
+											</div>
+                                        </li>
+                                    
+                                </ul>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </nav>
+    </header>
+    
+    <section id="dashboard">
+        <div class="heading-bar container">
+            <div class="row">
+                <h2>Member details</h2><br>
+                <div class="col-md-2 col-sm-12 col-xs-12 text-center">
+                    <img src="Images/img/customer-4.png" style="height: 100px;width: 100px;margin-bottom: 20px;">
+                </div>
+                <div class="col-md-10 col-sm-12 col-xs-12">
+                       <div class="row">
+                        <div class="col-md-2 col-sm-3 col-xs-6">
+                            <p>First Name</p>
+                            <p>Last Name</p>
+                            <p>Email</p>
+                            <p>DOB</p>
+                            <p>Phone Number</p>
+                            <p>Collage/University</p>
+                        </div>
+                        <div class="col-md-3 col-sm-3 col-xs-6" style="color:#6255a5;font-weight: 600">
+                            <p>Richard</p>
+                            <p>Brown</p>
+                            <p>richardbrown77@gmail.com</p>
+                            <p>13-08-1990</p>
+                            <p>9988731221</p>
+                            <p>University Of California</p>
+                        </div>
+                        <div class="col-md-1 col-sm-1">
+                            <p style="border: 1px solid #d1d1d1;height: 160px;width: 1px;"></p>
+                        </div>
+                        <div class="col-md-2 col-sm-2 col-xs-6">
+                            <p>Address 1:</p>
+                            <p>Address 2:</p>
+                            <p>City :</p>
+                            <p>State :</p>
+                            <p>Country :</p>
+                            <p>Zip Code :</p>
+                        </div>
+                        <div class="col-md-3 col-sm-3 col-xs-6" style="color:#6255a5;font-weight: 600;">
+                            <p>144-Diamond Height<p>
+                            <p>Star Colony</p>
+                            <p>New york</p>
+                            <p>New York State</p>
+                            <p>United State</p>
+                            <p>11004-05</p>
+                        </div>
+                    </div>
+                </div>
+            </div>  
+              
+            <hr>
+            <div class="row">
+                <div class="col-md-6">
+                    <h3 class="row">Notes</h3>
+                </div>
+            </div>       
+            <div class="row sold-table-list">
+                <div class="container">
+                    <div class="row">
+                        <table class="table">
+                            <tr>
+                                <th>SR NO.</th>
+                                <th>NOTE TITLE</th>
+                                <th>CATEGORY</th>
+                                <th>STATUS</th>
+                                <th>DOWNLOADED NOTES</th>
+                                <th>TOTAL EARNINGS</th>
+                                <th>DATE ADDED</th>
+                                <th>PUBLISHED DATE</th>
+                                <th></th>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td class="titile-text">Software Develoomane</td>
+                                <td>IT</td>
+                                <td>Published</td>
+                                <td class="titile-text text-center">22</td>
+                                <td class="text-center">$177</td>
+                                <td>09-10-2020,10:10</td>
+                                <td>09-10-2020,10:10</td>
+                                <td><img src="Images/img/dots.png"></td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td class="titile-text">Computer Basic</td>
+                                <td>Computer Basic</td>
+                                <td>Published</td>
+                                <td class="titile-text text-center">4</td>
+                                <td class="text-center">$125</td>
+                                <td>10-10-2020,11:25</td>
+                                <td>10-10-2020,11:25</td>
+                                <td><img src="Images/img/dots.png"></td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td class="titile-text">Human Body</td>
+                                <td>Science</td>
+                                <td>InReview</td>
+                                <td class="titile-text text-center">17</td>
+                                <td class="text-center">$978</td>
+                                <td>11-10-2020,1:00</td>
+                                <td>11-10-2020,1:00</td>
+                                <td><img src="Images/img/dots.png"></td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td class="titile-text">World war 2</td>
+                                <td>History</td>
+                                <td>Published</td>
+                                <td class="titile-text text-center">28</td>
+                                <td class="text-center">$15254</td>
+                                <td>12-10-2020,10:10</td>
+                                <td>12-10-2020,10:10</td>
+                                <td><img src="Images/img/dots.png"></td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td class="titile-text">Accounting</td>
+                                <td>IT</td>
+                                <td>Published</td>
+                                <td class="titile-text text-center">0</td>
+                                <td class="text-center">$69</td>
+                                <td>13-10-2020,11:25</td>
+                                <td>NA</td>
+                                <td><img src="Images/img/dots.png"></td>
+                            </tr>
+                      </table>
+                        <div class="popup">
+                            <ul><li>Download</li></ul>
+                        </div>
+                    </div>  
+
+                </div>
+            </div>
+        </div>
+        
+        <div class="container page" aria-label="Page navigation example">
+            <ul class="pagination col-md-12 col-sm-12 col-xs-12">
+                <li><a class="page-link-img" href="#"><img src="Images/img/left-arrow.png"></a></li>
+                <li><a class="page-link" href="#">1</a></li>
+                <li><a class="page-link" href="#">2</a></li>
+                <li><a class="page-link" href="#">3</a></li>
+                <li><a class="page-link" href="#">4</a></li>
+                <li><a class="page-link" href="#">5</a></li>
+                <li><a class="page-link-img" href="#"><img src="Images/img/right-arrow.png"></a></li>
+            </ul>
+        </div>
+    </section>
+    
+    <hr>   
+    <footer id="footer"> 
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-sm-6 col-xs-6">
+                    <p>Copyright &copy; Tatvasoft All right reserved.</p>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-6 text-right">
+                    <ul class="social-list">
+                        <li><a href="https://www.facebook.com/"><img src="Images/img/facebook.png" style="margin-top: 9px"></a></li>
+                        <li><a href="https://twitter.com/"><img src="Images/img/twitter.png" style="margin-top: 9px"></a></li>
+                        <li><a href="https://www.linkedin.com/"><img src="Images/img/linkedin.png" style="margin-top: 9px"></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+        
+    <!--Scripts-->
+    <script src="js/jquery.js"></script>
+
+    <script src="js/Bootstrap/bootstrap.min.js"></script>
+    
+    <script src="js/easing/easing.min.js"></script>
+    
+    <script src="js/script.js"></script>
+    
+    </body>
+    
+</html>    

@@ -1,0 +1,284 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+
+        <title>Notes Marketplace</title>
+        <link rel="stylesheet" href="css/Bootstrap/bootstrap.min.css">
+        
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+            
+        <link rel="shortcut icon" href="img/favicon.ico">
+                
+        <link rel="stylesheet" href="css/font-awesome/css/font-awesome.min.css">
+
+        <link rel="stylesheet" href="css/style.min.css">
+        
+        <link rel="stylesheet" href="css/responsive.css">
+  
+    </head>
+<body>
+    
+     <!--Header-->
+    <header>
+        <nav class="navbar navbar-fixed-top">
+            <div class="container">
+                <div class="site-nav-wrapper">
+                    
+                    <div class="navbar-header">
+                        
+                        <!--Mobile menu Open Button-->
+                        <span id="mobile-nav-open-btn">&#9776;</span>
+                       
+                        <!--Logo-->
+                        <a href="index.html" class="navbar-brand smooth-scroll">
+                            <img src ="Images/img/top-logo.png" alt="logo">
+                        </a>
+                    </div>
+                    
+                    <!--Main Menu-->
+                    <div class="container">
+                        <div class="collapse navbar-collapse">
+                            <ul class="nav navbar-nav pull-right">
+                                <li><a href="admin_dashboard.html">Dashboard</a></li>
+                                <li><a href="sell_notes.html">Notes</a></li>
+                                <li><a href="memebers.html">Memebers</a></li>
+                                <li><a href="FAQ_page.html">Reportes</a></li>
+                                <li><a href="contect_us.html">Settings</a></li>
+                                <li class="user-icon-list">
+                                    <a data-toggle="collapse" href="#collapseExample"><img src="Images/img/user-img.png">&nbsp;&nbsp;</a>
+                                
+                                    <div class="collapse"  id="collapseExample">   
+                                        <ul>
+                                           <li><a href="user_profile.html">My Profile</a></li>
+                                           <li><a href="download_notes.html">My Downloads</a></li>
+                                           <li><a href="sold_notes.html">My Sold Notes</a></li>
+                                           <li><a href="rejected_notes.html">My Rejected Notes</a></li>
+                                           <li><a href="profile.html">Change Password</a></li>
+                                           <li><a href="login.html" style="color: #6255a5;">Logout</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div id="home-btn">
+                                        <a class="btn" href="login.html" title="Login" role="button">Logout</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!--Mobile menu-->
+                    <div id="mobile-nav">
+                        <span id="mobile-nav-close-btn">&times;</span>
+                        <div id="mobile-nav-content">
+                           <ul class="nav">
+                                <li><a href="admin_dashboard.html">Dashboard</a></li>
+                                <li><a href="sell_notes.html">Notes</a></li>
+                                <li><a href="memebers.html">Memebers</a></li>
+                                <li><a href="FAQ_page.html">Reportes</a></li>
+                                <li><a href="contect_us.html">Settings</a></li>
+                                <li class="user-icon-list">
+                                    <a data-toggle="collapse" href="#collapseExample"><img src="Images/img/user-img.png">&nbsp;&nbsp;</a>
+                                
+                                    <div class="collapse"  id="collapseExample">   
+                                        <ul>
+                                           <li><a href="user_profile.html">My Profile</a></li>
+                                           <li><a href="download_notes.html">My Downloads</a></li>
+                                           <li><a href="sold_notes.html">My Sold Notes</a></li>
+                                           <li><a href="rejected_notes.html">My Rejected Notes</a></li>
+                                           <li><a href="profile.html">Change Password</a></li>
+                                           <li><a href="login.html" style="color: #6255a5;">Logout</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div id="home-btn">
+                                        <a class="btn" href="login.html" title="Login" role="button">Logout</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </nav>
+    </header>
+    
+    <section id="Dashboard">
+        <div class="heading-bar container">
+            <div class="row">    
+                <div class="col-md-12 col-sm-6 col-xs-12">
+                    <h2 class="row">Notes Under Review</h2>
+                </div>
+            </div>
+            <div class="row">
+                <h4>seller</h4>
+            </div>
+            <div class="row">
+                <div class="col-md-6 col-sm-4 col-xs-12" style="left: -10;">
+                    <select class="form-select">
+                        <option>Khyati</option>
+                    </select>    
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <form role="form" class="row form1">
+                        <div class="col-md-9 col-sm-7 col-xs-7 form-group searchinput">
+                            <img src="Images/img/search-icon.png" class="form-control-feedback">
+                            <input type="search" class="form-control" placeholder="Search"/>
+                        </div>
+                        <div class="col-md-3 col-sm-3 col-xs-2">
+                            <button class="btn">SEARCH</button>    
+                        </div>
+                        
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+        <div class="sold-table-list">
+            <div class="container">
+                <div class="row">
+                    <table class="table">
+                        <thead style="font-size: 12px;margin-top: 10px;">
+                            <tr>
+                                <th>SR NO.</th>
+                                <th>NOTE TITLE</th>
+                                <th>CATEGORY</th>
+                                <th>SELLER</th>
+                                <th>DATE ADDED</th>
+                                <th>STATUS</th>
+                                <th class="text-center">ACTION</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody style="font-size: 10px;">
+                            <tr>
+                                <td>1</td>
+                                <td class="titile-text">Software Develoomane</td>
+                                <td>IT</td>
+                                <td>Khyati Patel <img src="Images/img/eye.png"></td>
+                                <td>09-10-2020,10:10</td>
+                                <td>InReview</td>
+                                <td class="review-action row">
+                                    <button class="btn1 btn-success">Approve</button>
+                                    <button class="btn1 btn-danger">Reject</button>
+                                    <button class="btn1 btn-secondary">InReview</button>
+                                </td>
+                                <td><img src="Images/img/dots.png"></td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td class="titile-text">Computer Basic</td>
+                                <td>Computer </td>
+                                <td>Khyati Patel <img src="Images/img/eye.png"></td>
+                                <td>10-10-2020,11:25</td>
+                                <td>Submitted for Review</td>
+                                <td class="review-action row">
+                                    <button class="btn1 btn-success">Approve</button>
+                                    <button class="btn1 btn-danger">Reject</button>
+                                    <button class="btn1 btn-secondary">InReview</button>
+                                </td>
+
+                                <td><img src="Images/img/dots.png"></td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td class="titile-text">Human Body</td>
+                                <td>Science</td>
+                                <td>Khyati Patel <img src="Images/img/eye.png"></td>
+                                <td>11-10-2020,01:00</td>
+                                <td>InReview</td>
+                                <td class="review-action row">
+                                    <button class="btn1 btn-success">Approve</button>
+                                    <button class="btn1 btn-danger">Reject</button>
+                                    <button class="btn1 btn-secondary">InReview</button>
+                                </td>
+
+                                <td><img src="Images/img/dots.png"></td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td class="titile-text">World war 2</td>
+                                <td>History</td>
+                                <td>Khyati Patel <img src="Images/img/eye.png"></td>
+                                <td>12-10-2020,10:10</td>
+                                <td>InReview</td>
+                                <td class="review-action row">
+                                    <button class="btn1 btn-success">Approve</button>
+                                    <button class="btn1 btn-danger">Reject</button>
+                                    <button class="btn1 btn-secondary">InReview</button>
+                                </td>
+
+                                <td><img src="Images/img/dots.png"></td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td class="titile-text">Accounting</td>
+                                <td>Account</td>
+                                <td>Khyati Patel <img src="Images/img/eye.png"></td>
+                                <td>13-10-2020,11:25</td>
+                                <td>InReview</td>
+                                <td class="review-action row">
+                                    <button class="btn1 btn-success">Approve</button>
+                                    <button class="btn1 btn-danger">Reject</button>
+                                    <button class="btn1 btn-secondary">InReview</button>
+                                </td>
+
+                                <td><img src="Images/img/dots.png"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                        <div class="popup">
+                        <ul><li>Download</li></ul>
+                    </div>
+                </div>  
+                
+            </div>
+        </div>
+    
+        <div class="container page" aria-label="Page navigation example">
+            <ul class="pagination">
+                <li><a class="page-link-img" href="#"><img src="Images/img/left-arrow.png"></a></li>
+                <li><a class="page-link" href="#">1</a></li>
+                <li><a class="page-link" href="#">2</a></li>
+                <li><a class="page-link" href="#">3</a></li>
+                <li><a class="page-link" href="#">4</a></li>
+                <li><a class="page-link" href="#">5</a></li>
+                <li><a class="page-link-img" href="#"><img src="Images/img/right-arrow.png"></a></li>
+            </ul>
+        </div> 
+    </section>
+    
+    <hr>   
+    <footer id="footer"> 
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-sm-6 col-xs-6">
+                    <p>Copyright &copy; Tatvasoft All right reserved.</p>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-6 text-right">
+                    <ul class="social-list">
+                        <li><a href="https://www.facebook.com/"><img src="Images/img/facebook.png" style="margin-top: 9px"></a></li>
+                        <li><a href="https://twitter.com/"><img src="Images/img/twitter.png" style="margin-top: 9px"></a></li>
+                        <li><a href="https://www.linkedin.com/"><img src="Images/img/linkedin.png" style="margin-top: 9px"></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+            
+    <!--Scripts-->
+    <script src="js/jquery.js"></script>
+
+    <script src="js/Bootstrap/bootstrap.min.js"></script>
+    
+    <script src="js/easing/easing.min.js"></script>
+    
+    <script src="js/script.js"></script>
+    
+    </body>
+    
+</html>

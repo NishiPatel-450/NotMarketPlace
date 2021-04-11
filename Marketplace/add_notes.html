@@ -1,0 +1,322 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+
+        <title>Notes Marketplace</title>
+        <link rel="stylesheet" href="css/Bootstrap/bootstrap.min.css">
+        
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+            
+        <link rel="shortcut icon" href="Images/img/favicon.ico">
+                
+        <link rel="stylesheet" href="css/font-awesome/css/font-awesome.min.css">
+
+        <link rel="stylesheet" href="css/style.min.css">
+        
+        <link rel="stylesheet" href="css/responsive.css">
+  
+    </head>
+<body> 
+    
+   
+    <!--Header-->
+    <header>
+        <nav class="navbar navbar-fixed-top">
+            <div class="container">
+                <div class="site-nav-wrapper">
+                    
+                    <div class="navbar-header">
+                        
+                        <!--Mobile menu Open Button-->
+                        <span id="mobile-nav-open-btn">&#9776;</span>
+                       
+                        <!--Logo-->
+                        <a href="index.html" class="navbar-brand smooth-scroll">
+                            <img src ="Images/img/top-logo.png" alt="logo">
+                        </a>
+                    </div>
+                    
+                    <!--Main Menu-->
+                    <div class="container">
+                        <div class="collapse navbar-collapse">
+                            <ul class="nav navbar-nav pull-right">
+                                <li><a href="search_notes.html">Search Notes</a></li>
+                                <li><a href="sell_notes.html">Sell your Notes</a></li>
+                                <li><a href="buyer_request.html">Buyer Request</a></li>
+                                <li><a href="FAQ_page.html">FAQ</a></li>
+                                <li><a href="contect_us.html">Contact Us</a></li>
+                                <li class="user-icon-list">
+                                    <a data-toggle="collapse" href="#collapseExample"><img src="Images/img/user-img.png">&nbsp;&nbsp;</a>
+                                
+                                    <div class="collapse"  id="collapseExample">   
+                                        <ul>
+                                           <li><a href="user_profile.html">My Profile</a></li>
+                                           <li><a href="download_notes.html">My Downloads</a></li>
+                                           <li><a href="sold_notes.html">My Sold Notes</a></li>
+                                           <li><a href="rejected_notes.html">My Rejected Notes</a></li>
+                                           <li><a href="profile.html">Change Password</a></li>
+                                           <li><a href="login.html" style="color: #6255a5;">Logout</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div id="home-btn">
+                                        <a class="btn" href="login.html" title="Login" role="button">Logout</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!--Mobile menu-->
+                    <div id="mobile-nav">
+                        <span id="mobile-nav-close-btn">&times;</span>
+                        <div id="mobile-nav-content">
+                           <ul class="nav">
+                                <li><a href="search_notes.html">Search Notes</a></li>
+                                <li><a href="sell_notes.html">Sell your Notes</a></li>
+                                <li><a href="buyer_request.html">Buyer Request</a></li>
+                                <li><a href="FAQ_page.html">FAQ</a></li>
+                                <li><a href="contect_us.html">Contact Us</a></li>
+                                <li class="user-icon-list">
+                                    <a data-toggle="collapse" href="#collapseExample"><img src="Images/img/user-img.png">&nbsp;&nbsp;</a>
+                                
+                                    <div class="collapse"  id="collapseExample">   
+                                        <ul>
+                                           <li><a href="user_profile.html">My Profile</a></li>
+                                           <li><a href="download_notes.html">My Downloads</a></li>
+                                           <li><a href="sold_notes.html">My Sold Notes</a></li>
+                                           <li><a href="rejected_notes.html">My Rejected Notes</a></li>
+                                           <li><a href="profile.html">Change Password</a></li>
+                                           <li><a href="login.html" style="color: #6255a5;">Logout</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div id="home-btn">
+                                        <a class="btn" href="login.html" title="Login" role="button">Logout</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </nav>
+    </header>
+   
+    <!--Home Page-->
+    <section id="faq-home">
+        <!--Home Content-->
+        <div class="img-bg">
+            <div class="container home-content">    
+                <div class="home-content-inner">
+                    <h1>Add Notes</h1>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="add-note" class="details">
+        <div class="container" id="notes-details">
+            <div class="heading">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h3>Basic Notes Details</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="details-form">
+                <div class="row">
+                    <form class="contactform">
+                        <div class="col-md-6 col-sm-12 col-xs-12 form-group">
+                            <label>Title*</label>
+                            <input type="text" class="form-control" placeholder="Enter your notes title">
+                            <label>Display Picture*</label>
+                            <div id="disp-file" class="form-group text-center">
+                                <input class="form-control">
+								<span class="upload-img">
+									<img src="Images/img/upload-file.png">
+									<p class="text-muted">Upload a picture</p>
+								</span>
+                            </div>
+                            <label>Type*</label>
+                            <select class="form-control">
+                                <option>Select your note type</option>
+                                <option>Handwritten</option>
+                                <option>Story Books</option>
+                                <option>University notes</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6 col-sm-12 col-xs-12 form-group">
+                            <label>Category*</label>
+                            <select class="form-control">
+                                <option>Select youe category</option>
+                                <option>IT</option>
+                                <option>CA</option>
+                                <option>CS</option>
+                                <option>MBA</option>
+                            </select>
+                            
+                            <label>Upload Notes*</label>
+                            <div id="disp-file" class="form-group text-center">
+                                <input class="form-control">
+                                  <span class="upload-img">
+                                      <img src="Images/img/upload-note.png">
+                                      <p class="text-muted">Upload your notes</p>
+                                  </span>
+                            </div>
+                            <label>Number of Pages*</label>
+                            <input type="text" class="form-control" placeholder="Enter number of notes pahes">
+                        </div>
+                        <div class="col-md-12">
+                            <label>Description*</label>
+                            <input type="text" class="form-control desc" placeholder="Enter your description">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="add-note">
+        <div class="container" id="notes-details">
+            <div class="heading">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h3>Institution Information</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="details-form">
+                <div class="row">
+                    <form class="contactform">
+                        <div class="col-md-6 form-group">
+                            <label>Country</label>
+                            <select class="form-control">
+                                <option>Select your Country</option>
+                                <option>India</option>
+                                <option>USA</option>
+                                <option>UK</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6 form-group">
+                            <label>Institution Name</label>
+                            <input type="text" class="form-control" placeholder="Enter your institution Name">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="add-note">
+        <div class="container" id="notes-details" >
+            <div class="heading">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h3>Course Details</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="details-form">
+                <div class="row">
+                    <form class="contactform">
+                        <div class="col-md-6 form-group">
+                            <label>Course Name</label>
+                            <input type="text" class="form-control" placeholder="Enter your course name">
+                            <label>Professor/Lecturer</label>
+                            <input type="text" class="form-control" placeholder="Enter your professor name">
+                        </div>
+                        <div class="col-md-6 form-group">
+                            <label>Course Code</label>
+                            <input type="text" class="form-control" placeholder="Enter your Course Code">    
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="add-note">
+        <div class="container" id="notes-details">
+            <div class="heading">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h3>Selling Information</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="details-form">
+                <div class="row">
+                    <form class="contactform">
+                        <div class="col-md-6 form-group">
+                            <label>Sell For*</label><br>
+                            <div class="row">
+                                <div class="col-md-2 col-sm-2 col-xs-3">
+                                    <input type="radio" name="sell" class="rd1">
+                                    <label class="rd-text">Free</label>
+                                </div>
+                                <div class="col-md-2 col-sm-2 col-xs-3">
+                                    <input type="radio" name="sell" class="rd1">
+                                    <label class="rd-text">Paid</label>
+                                </div>
+                            </div>
+                            
+                            <br>
+                            <label>Sell Price*</label>
+                            <input type="text" class="form-control" placeholder="Enter your price">
+                        </div>
+                        <div class="col-md-6 form-group">
+                            <label>Note Preview</label>
+                            <div id="note-pre" class="form-group text-center">
+                                <input class="form-control">
+                                  <span class="upload-img">
+                                      <img src="Images/img/upload-note.png">
+                                      <p class="text-muted">Upload your notes</p>
+                                  </span>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <button class="btn col-md-2">SAVE</button>
+                            <button class="btn col-md-2 publish-btn">PUBLISH</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <hr>
+    <footer id="footer"> 
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-sm-6 col-xs-6">
+                    <p>Copyright &copy; Tatvasoft All right reserved.</p>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-6 text-right">
+                    <ul class="social-list">
+                        <li><a href="https://www.facebook.com/"><img src="Images/img/facebook.png" style="margin-top: 9px"></a></li>
+                        <li><a href="https://twitter.com/"><img src="Images/img/twitter.png" style="margin-top: 9px"></a></li>
+                        <li><a href="https://www.linkedin.com/"><img src="Images/img/linkedin.png" style="margin-top: 9px"></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+        
+    <!--Scripts-->
+    <script src="js/jquery.js"></script>
+
+    <script src="js/Bootstrap/bootstrap.min.js"></script>
+    
+    <script src="js/easing/easing.min.js"></script>
+    
+    <script src="js/script.js"></script>
+    
+    </body>
+    
+</html>
