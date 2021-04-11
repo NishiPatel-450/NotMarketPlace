@@ -1,0 +1,153 @@
+﻿@model IEnumerable<EmailConfirm.SellNote>
+
+@{
+    ViewBag.Title = "Dashboard";
+    Layout = "~/Views/Shared/css_js.cshtml";
+    Layout = "~/Views/Shared/Nav.cshtml";
+}
+<br />
+<br />
+
+<section id="dashboard1">
+    <div class="dashboard-card">
+        <div class="heading-bar container">
+            <div class="row">
+                <div class="col-md-6 col-sm-6 col-xs-6">
+                    <h2 class="row">Dashboard</h2>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-6 text-right">
+                    @Html.ActionLink("Add Notes", "Index", "Notes", routeValues: null, htmlAttributes: new { id = "noteslink", @class = "btn contactform" })
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="container">
+            <form class="row">
+                <button class="card-01 col-md-2 col-sm-6 col-xs-6" style="background-color: #fff;">
+                    <img src="~/img/earning-icon.svg">
+                    <h3 class="earning">My Earning</h3>
+                </button>
+                <button class="card-03 col-md-4 col-sm-6 col-xs-6" style="background-color: #fff;" formaction="sold_notes.html">
+                    <div class="row">
+                        <a class="col-md-6 col-sm-6 col-xs-6 sold text-center" href="sold_notes.html">
+                            <h3>100</h3>
+                            <p>Number of Notes Sold</p>
+                        </a>
+                        <a class="col-md-6 col-sm-6 col-xs-6 money text-center">
+                            <h3>$10,00,000</h3>
+                            <p>Money Earned</p>
+                        </a>
+                    </div>
+                </button>
+                <button class="card-02 col-md-1 col-sm-4 col-xs-4 text-center" style="background-color: #fff;" formaction="download_notes.html">
+                    <h3>38</h3>
+                    <p>My Downloads</p>
+                </button>
+                <button class="card-02 col-md-1 col-sm-4 col-xs-4 text-center" style="background-color: #fff;" formaction="rejected_notes.html">
+                    <h3>12</h3>
+                    <p>My Rejected Notes</p>
+                </button>
+                <button class="card-02 col-md-1 col-sm-4 col-xs-4 text-center" style="background-color: #fff;"
+                        formaction="buyer_request.html">
+                    <h3>102</h3>
+                    <p>Buyer Request</p>
+                </button>
+            </form>
+        </div>
+    </div>
+</section>
+
+
+<br>
+
+<div class="container">
+    <h4 style="color:rebeccapurple">In Progress Note</h4>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Category)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Status)
+            </th>
+            <th>
+                @Html.DisplayName("Action")
+            </th>
+
+
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Category)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Status)
+                </td>
+
+            </tr>
+        }
+
+    </table>
+</div>
+
+
+<div class="container">
+    <h4 style="color:rebeccapurple">Published Note</h4>
+    <table class="table container">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Category)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NoteType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SellingPrice)
+            </th>
+            <th>
+                @Html.DisplayName("Action")
+            </th>
+
+
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Category)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NoteType)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SellingPrice)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>
+

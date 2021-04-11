@@ -1,0 +1,216 @@
+﻿@model IEnumerable<EmailConfirm.SellNote>
+
+@{
+    ViewBag.Title = "NoteDetails";
+    Layout = "~/Views/Shared/css_js.cshtml";
+    Layout = "~/Views/Shared/Nav.cshtml";
+}
+
+    @foreach (var item in Model)
+    {
+        var base64 = Convert.ToBase64String(item.Display_pic);
+        var imgsrc = string.Format("data:/image/gif;base64,{0}", base64);
+
+        var basepdf = Convert.ToBase64String(@item.Upload_note);
+        var pdfsrc = string.Format("data:application/pdf;base64,{0}", basepdf);
+
+        <section id="notes-details">
+            <div class="container">
+                <div class="note-detail">
+                    <div class="row">
+                        <div class="heading col-md-12">
+                            <h3>Notes Details</h3>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 col-sm-12 col-xs-12 row">
+                            <div class="note-img col-md-5 col-sm-4 col-xs-3">
+                                <img src="@imgsrc">
+                            </div>
+                            <div class="col-md-7 col-sm-6 col-xs-6">
+                                <div class="note-brief">
+                                    <h6>@item.title</h6>
+                                    <p>@item.Category</p>
+                                    <p class="brief">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam non labore repudiandae obcaecati soluta temporibus facere adipisci.</p>
+                                    <div class="btn" style="color:#ffffff">
+                                        @Html.ActionLink("DOWNLOAD / $15", "Buyer", "Notes",new {id = item.title ,style="color:white"},null)
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-sm-10 col-xs-11">
+                            <div class="note-details row">
+                                <div class="col-md-5 col-sm-5 col-xs-5 note-detail-title">
+                                    <p>Institution:</p>
+                                    <p>Country:</p>
+                                    <p>Course Name:</p>
+                                    <p>Course Code:</p>
+                                    <p>Professor:</p>
+                                    <p>Number of Pages:</p>
+                                    <p>Approve Date:</p>
+                                    <p>Rating:</p>
+                                </div>
+                                <div class="col-md-7 col-sm-7 col-xs-7 note-detail-text">
+                                    <p>@item.University_Name</p>
+                                    <p>@item.Country</p>
+                                    <p>@item.Course</p>
+                                    <p>@item.Course_Code</p>
+                                    <p>@item.Professor_name</p>
+                                    <p>@item.NumberofPages</p>
+                                    <p>November 25 2020</p>
+                                    <div class="ratings">
+                                        <div class="row">
+                                            <div class="rate col-md-7 col-sm-7 col-xs-7">
+                                                <input type="radio" id="star5" name="rate" value="5" />
+                                                <label for="star5" title="text">5 stars</label>
+
+                                                <input type="radio" id="star4" name="rate" value="4" />
+                                                <label for="star4" title="text">4 stars</label>
+
+                                                <input type="radio" id="star3" name="rate" value="3" />
+                                                <label for="star3" title="text">3 stars</label>
+
+                                                <input type="radio" id="star2" name="rate" value="2" />
+                                                <label for="star2" title="text">2 stars</label>
+
+                                                <input type="radio" id="star1" name="rate" value="1" />
+                                                <label for="star1" title="text">1 star</label>
+                                            </div>
+                                            <div class=" col-md-5 col-sm-5 col-xs-5">
+                                                <p style="margin-top: 10px;">100 reviews</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12  col-sm-12 col-xs-12">
+                                    <p class="flag-text">5 Users marked this notes as Inappropriate</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <hr>
+
+                <div class="row">
+                    <div class="col-md-5 col-sm-12 col-xs-12">
+                        <div class="note-preview">
+                            <div class="row">
+                                <div class="heading col-md-12">
+                                    <h3>Notes Preview</h3>
+                                </div>
+                            </div>
+                            <div class="note-pdf ">
+                                <iframe src="@pdfsrc" style="width:450px; height:500px;" frameborder="0"></iframe>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-7 col-sm-12 col-xs-12">
+                        <div class="customer-review">
+                            <div class="row">
+                                <div class="heading col-md-12">
+                                    <h3>Customer Rreviews</h3>
+                                </div>
+                            </div>
+                            <div class="reviews">
+                                <div class="row">
+                                    <div class="col-md-1 col-sm-1 col-xs-1 reviewer-img">
+                                        <img src="~/img/reviewer-1.png">
+                                    </div>
+                                    <div class="col-md-10 col-sm-10 col-xs-10 review-content">
+                                        <h5>Richard Brown</h5>
+                                        <div class="ratings">
+                                            <div class="row">
+                                                <div class="rate">
+                                                    <input type="radio" id="star5" name="rate" value="5" />
+                                                    <label for="star5" title="text">5 stars</label>
+
+                                                    <input type="radio" id="star4" name="rate" value="4" />
+                                                    <label for="star4" title="text">4 stars</label>
+
+                                                    <input type="radio" id="star3" name="rate" value="3" />
+                                                    <label for="star3" title="text">3 stars</label>
+
+                                                    <input type="radio" id="star2" name="rate" value="2" />
+                                                    <label for="star2" title="text">2 stars</label>
+
+                                                    <input type="radio" id="star1" name="rate" value="1" />
+                                                    <label for="star1" title="text">1 star</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus similique velit consequuntur sunt fugit, unde itaque.</p>
+                                    </div>
+                                </div><hr>
+
+                                <div class="row">
+                                    <div class="col-md-1 col-sm-1 col-xs-1 reviewer-img">
+                                        <img src="~/img/reviewer-2.png">
+                                    </div>
+                                    <div class="col-md-10 col-sm-10 col-xs-10 review-content">
+                                        <h5>Alice Ortiaz</h5>
+                                        <div class="ratings">
+                                            <div class="row">
+                                                <div class="rate">
+                                                    <input type="radio" id="star5" name="rate" value="5" />
+                                                    <label for="star5" title="text">5 stars</label>
+
+                                                    <input type="radio" id="star4" name="rate" value="4" />
+                                                    <label for="star4" title="text">4 stars</label>
+
+                                                    <input type="radio" id="star3" name="rate" value="3" />
+                                                    <label for="star3" title="text">3 stars</label>
+
+                                                    <input type="radio" id="star2" name="rate" value="2" />
+                                                    <label for="star2" title="text">2 stars</label>
+
+                                                    <input type="radio" id="star1" name="rate" value="1" />
+                                                    <label for="star1" title="text">1 star</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus similique velit consequuntur sunt fugit, unde itaque.</p>
+                                    </div>
+                                </div><hr>
+
+                                <div class="row">
+                                    <div class="col-md-1 col-sm-1 col-xs-1 reviewer-img">
+                                        <img src="~/img/reviewer-3.png">
+                                    </div>
+                                    <div class="col-md-10 col-sm-10 col-xs-10 review-content">
+                                        <h5>Sara Passmore</h5>
+                                        <div class="ratings">
+                                            <div class="row">
+                                                <div class="rate">
+                                                    <input type="radio" id="star5" name="rate" value="5" />
+                                                    <label for="star5" title="text">5 stars</label>
+
+                                                    <input type="radio" id="star4" name="rate" value="4" />
+                                                    <label for="star4" title="text">4 stars</label>
+
+                                                    <input type="radio" id="star3" name="rate" value="3" />
+                                                    <label for="star3" title="text">3 stars</label>
+
+                                                    <input type="radio" id="star2" name="rate" value="2" />
+                                                    <label for="star2" title="text">2 stars</label>
+
+                                                    <input type="radio" id="star1" name="rate" value="1" />
+                                                    <label for="star1" title="text">1 star</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus similique velit consequuntur sunt fugit, unde itaque.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+        </section>
+    }

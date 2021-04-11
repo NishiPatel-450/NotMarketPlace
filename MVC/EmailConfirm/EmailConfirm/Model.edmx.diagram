@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="5cc35a52a9114d0bba728babab7db2f5" Name="Diagram1">
+        <EntityTypeShape EntityType="NotMarketPlaceModel.BuyerRequest" Width="1.5" PointX="8.25" PointY="16.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="NotMarketPlaceModel.Country" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NotMarketPlaceModel.Download" Width="1.5" PointX="5.25" PointY="11.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="NotMarketPlaceModel.FileDetail" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NotMarketPlaceModel.NoteCatgory" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NotMarketPlaceModel.NoteType" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NotMarketPlaceModel.RefernceData" Width="1.5" PointX="4.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NotMarketPlaceModel.Register" Width="1.5" PointX="0.75" PointY="11.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="NotMarketPlaceModel.SellerNotesAttachement" Width="1.5" PointX="5.25" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NotMarketPlaceModel.SellerNotesReportedIssue" Width="1.5" PointX="7.5" PointY="12" IsExpanded="true" />
+        <EntityTypeShape EntityType="NotMarketPlaceModel.SellerNotesReview" Width="1.5" PointX="10.5" PointY="12.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="NotMarketPlaceModel.SellNote" Width="1.5" PointX="3" PointY="12.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="NotMarketPlaceModel.SystemConfiguration" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NotMarketPlaceModel.UserProfile" Width="1.5" PointX="3" PointY="19" IsExpanded="true" />
+        <EntityTypeShape EntityType="NotMarketPlaceModel.UserRole" Width="1.5" PointX="6.75" PointY="4.75" IsExpanded="true" />
+        <AssociationConnector Association="NotMarketPlaceModel.FK__BuyerRequ__Buyer__10216507" ManuallyRouted="false" />
+        <AssociationConnector Association="NotMarketPlaceModel.FK__BuyerRequ__Selle__0F2D40CE" ManuallyRouted="false" />
+        <AssociationConnector Association="NotMarketPlaceModel.FK__Download__Downlo__0C50D423" ManuallyRouted="false" />
+        <AssociationConnector Association="NotMarketPlaceModel.FK__Download__NoteId__0B5CAFEA" ManuallyRouted="false" />
+        <AssociationConnector Association="NotMarketPlaceModel.FK__SellerNot__Again__09746778" ManuallyRouted="false" />
+        <AssociationConnector Association="NotMarketPlaceModel.FK__SellerNot__Again__0A688BB1" ManuallyRouted="false" />
+        <AssociationConnector Association="NotMarketPlaceModel.FK__SellerNot__Repor__756D6ECB" ManuallyRouted="false" />
+        <AssociationConnector Association="NotMarketPlaceModel.FK__SellerNot__Revie__76619304" ManuallyRouted="false" />
+        <AssociationConnector Association="NotMarketPlaceModel.FK__SellNotes__Selle__681373AD" ManuallyRouted="false" />
+        <AssociationConnector Association="NotMarketPlaceModel.FK__UserProfi__User___7C1A6C5A" ManuallyRouted="false" />
+        <AssociationConnector Association="NotMarketPlaceModel.FK__SellerNot__NoteI__15DA3E5D" ManuallyRouted="false" />
+        <AssociationConnector Association="NotMarketPlaceModel.FK__SellerNot__NoteI__6AEFE058" ManuallyRouted="false" />
+        <AssociationConnector Association="NotMarketPlaceModel.FK__SellerNot__NoteI__671F4F74" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="NotMarketPlaceModel.Table" Width="1.5" PointX="5.25" PointY="21.5" />
+        <AssociationConnector Association="NotMarketPlaceModel.FK__Table__Seller_Id__1B9317B3" />
+        <EntityTypeShape EntityType="NotMarketPlaceModel.RejectedNote" Width="1.5" PointX="5.25" PointY="24.5" />
+        <AssociationConnector Association="NotMarketPlaceModel.FK__RejectedN__Selle__1E6F845E" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

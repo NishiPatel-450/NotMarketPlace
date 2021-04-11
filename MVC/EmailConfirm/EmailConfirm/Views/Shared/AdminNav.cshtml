@@ -1,0 +1,186 @@
+﻿
+@{
+    ViewBag.Title = "AdminNav";
+    Layout = "~/Views/Shared/css_js.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <title>Notes Marketplace</title>
+    <link rel="stylesheet" href="~/css/Bootstrap/bootstrap.min.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="shortcut icon" href="img/favicon.ico">
+
+    <link rel="stylesheet" href="~/css/font-awesome/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="~/css/style.min.css">
+
+    <link rel="stylesheet" href="~/css/responsive.css">
+
+</head>
+
+<style>
+    .nav li.dropdown ul {
+        background-color: #fff;
+        position: absolute;
+        left: 0;
+        padding-left: 0;
+        min-width: 180px;
+        display: none;
+    }
+
+        .nav li.dropdown ul li {
+            padding: 10px;
+        }
+
+        .nav li.dropdown ul li {
+            width: 180px;
+        }
+
+    .nav li.dropdown:hover ul {
+        display: block;
+        list-style-type: none;
+    }
+
+    .dropdown ul li:hover {
+        background-color: #6255a5;
+    }
+
+    .dropdown ul li.logout .link {
+        color: #6255a5;
+    }
+
+    .dropdown ul li .menulink {
+        color: #000000;
+    }
+
+    .dropdown ul li:hover .link {
+        color: #fff;
+        text-decoration: none;
+    }
+</style>
+
+
+<body>
+
+    <!--Header-->
+    <header>
+        <nav class="navbar navbar-fixed-top white-nav-top">
+            <div class="container">
+                <div class="site-nav-wrapper row">
+                    <div class="navbar-header row col-md-6 col-sm-6">
+                        <!--Logo
+                        <a href="index.cshtml" class="navbar-brand col-xs-9">
+                            <img src="~/img/logo.png" alt="logo">
+                        </a>-->
+                        <a href="@Url.Action("Index", "Home")" class="link col-xs-9">
+                            <img alt="Logo" src="~/img/logo.png" style="margin-top:8%;">
+                        </a>
+                        <!--Mobile menu Open Button-->
+                        <span id="mobile-nav-open-btn" class="col-xs-2">&#9776;</span>
+                    </div>
+                    <!--Main Menu-->
+                    <div class="collapse navbar-collapse col-md-6 col-sm-12">
+                        <ul class="nav navbar-nav">
+                            <li>
+                                
+                                <ul class="nav navbar-nav navbar-right">
+                                    <li>@Html.ActionLink("Dashboard", "Dashboard", "Admin", routeValues: null, htmlAttributes: new { id = "contactlink" })</li>
+                                    <li class="dropdown">@Html.ActionLink("Notes", "", "Notes", routeValues: null, htmlAttributes: new { id = "noteslink" })
+                                    
+                                        <ul>
+                                            <li>@Html.ActionLink("Notes Under Review", "NoteUnderReview", "Admin", routeValues: null, htmlAttributes: new { @class = "link menulink" })</li>
+                                            <li>@Html.ActionLink("Published Notes", "AdminPublishNote", "Admin", routeValues: null, htmlAttributes: new { @class = "link menulink" })</li>
+                                            <li>@Html.ActionLink("Download Notes", "AdminDownloadNote", "Admin", routeValues: null, htmlAttributes: new { @class = "link menulink" })</li>
+                                            <li>@Html.ActionLink("Rejected Notes", "AdminRejectNote", "Admin", routeValues: null, htmlAttributes: new { @class = "link menulink" })</li>
+                                            
+                                        </ul>
+                                    </li>
+</li>
+                                    <li>@Html.ActionLink("Member", "", "Home", routeValues: null, htmlAttributes: new { id = "faqlink" })</li>
+                                    <li>@Html.ActionLink("Reports", "", "Home", routeValues: null, htmlAttributes: new { id = "contactlink" })</li>
+                                    <li>@Html.ActionLink("Settings", "", "Home", routeValues: null, htmlAttributes: new { id = "contactlink" })</li>
+                                    @if (User.Identity.IsAuthenticated)
+                                    {
+
+                                        <li class="dropdown">
+
+                                            <a href="#"><img src="~/img/user-img.png" /></a>
+                                            <ul>
+                                                <li>@Html.ActionLink("My Profile", "UserProfile", "RegisterUser", routeValues: null, htmlAttributes: new { @class = "link menulink" })</li>
+                                                <li>@Html.ActionLink("Change Password", "Logout", "RegisterUser", routeValues: null, htmlAttributes: new { @class = "link menulink" })</li>
+                                                <li class="logout">
+                                                    @Html.ActionLink("Logout", "Logout", "RegisterUser", routeValues: null, htmlAttributes: new { @class = "link" })
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>@Html.ActionLink("Logout", "Logout", "RegisterUser", routeValues: null, htmlAttributes: new { id = "logoutlink", @class = "btn" });</li>
+                                    }
+                                    else
+                                    {
+                                        <li>@Html.ActionLink("Log in", "Login", "RegisterUser", routeValues: null, htmlAttributes: new { id = "loginLink", @class = "btn" })</li>
+                                    }
+                                </ul>
+
+
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!--Mobile menu-->
+                    <div id="mobile-nav">
+                        <div class="row">
+                            <a href="index.html" class="col-xs-9" style="margin-top: 5%;">
+                                <img src="~/img/logo.png" alt="logo">
+                            </a>
+                            <span id="mobile-nav-close-btn" class="col-xs-2">&times;</span>
+                        </div>
+                        <div id="mobile-nav-content">
+                            <ul class="nav1 text-left">
+                                <li>
+                                    @Html.Partial("_LoginPartial")
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </nav>
+    </header>
+
+
+
+    @RenderBody();
+    <hr>
+
+    <!--Footer-->
+    <footer id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-sm-6 col-xs-6">
+                    <p>Copyright &copy; Tatvasoft All right reserved.</p>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-6 text-right">
+                    <ul class="social-list">
+                        <li><a href="https://www.facebook.com/"><img src="~/img/facebook.png"></a></li>
+                        <li><a href="https://twitter.com/"><img src="~/img/twitter.png"></a></li>
+                        <li><a href="https://www.linkedin.com/"><img src="~/img/linkedin.png"></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+</body>
+</html>
+

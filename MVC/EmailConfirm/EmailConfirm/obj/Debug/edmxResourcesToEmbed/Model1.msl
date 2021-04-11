@@ -1,0 +1,230 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="NotMarketPlaceModelStoreContainer" CdmEntityContainer="NotMarketPlaceEntities">
+    <EntitySetMapping Name="Countries">
+      <EntityTypeMapping TypeName="NotMarketPlaceModel.Country">
+        <MappingFragment StoreEntitySet="Country">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Country_Code" ColumnName="Country_Code" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Downloads">
+      <EntityTypeMapping TypeName="NotMarketPlaceModel.Download">
+        <MappingFragment StoreEntitySet="Download">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="NoteId" ColumnName="NoteId" />
+          <ScalarProperty Name="Seller" ColumnName="Seller" />
+          <ScalarProperty Name="Downloader" ColumnName="Downloader" />
+          <ScalarProperty Name="IsSellerHasAllowedDownload" ColumnName="IsSellerHasAllowedDownload" />
+          <ScalarProperty Name="AttachmentPath" ColumnName="AttachmentPath" />
+          <ScalarProperty Name="IsAttachmentDownloaded" ColumnName="IsAttachmentDownloaded" />
+          <ScalarProperty Name="AttachmentDownloadedDate" ColumnName="AttachmentDownloadedDate" />
+          <ScalarProperty Name="IsPaid" ColumnName="IsPaid" />
+          <ScalarProperty Name="PurchasedPrice" ColumnName="PurchasedPrice" />
+          <ScalarProperty Name="NoteTitle" ColumnName="NoteTitle" />
+          <ScalarProperty Name="NoteCategory" ColumnName="NoteCategory" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NoteTypes">
+      <EntityTypeMapping TypeName="NotMarketPlaceModel.NoteType">
+        <MappingFragment StoreEntitySet="NoteTypes">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RefernceDatas">
+      <EntityTypeMapping TypeName="NotMarketPlaceModel.RefernceData">
+        <MappingFragment StoreEntitySet="RefernceData">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+          <ScalarProperty Name="DataValue" ColumnName="DataValue" />
+          <ScalarProperty Name="RefCategoey" ColumnName="RefCategoey" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Registers">
+      <EntityTypeMapping TypeName="NotMarketPlaceModel.Register">
+        <MappingFragment StoreEntitySet="Registers">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="EmailId" ColumnName="EmailId" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SellerNotesAttachements">
+      <EntityTypeMapping TypeName="NotMarketPlaceModel.SellerNotesAttachement">
+        <MappingFragment StoreEntitySet="SellerNotesAttachement">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="NoteID" ColumnName="NoteID" />
+          <ScalarProperty Name="FileName" ColumnName="FileName" />
+          <ScalarProperty Name="FilePath" ColumnName="FilePath" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SellerNotesReportedIssues">
+      <EntityTypeMapping TypeName="NotMarketPlaceModel.SellerNotesReportedIssue">
+        <MappingFragment StoreEntitySet="SellerNotesReportedIssues">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="NoteID" ColumnName="NoteID" />
+          <ScalarProperty Name="ReportedById" ColumnName="ReportedById" />
+          <ScalarProperty Name="AgainstDownloadId" ColumnName="AgainstDownloadId" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SellerNotesReviews">
+      <EntityTypeMapping TypeName="NotMarketPlaceModel.SellerNotesReview">
+        <MappingFragment StoreEntitySet="SellerNotesReview">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="NoteID" ColumnName="NoteID" />
+          <ScalarProperty Name="ReviewById" ColumnName="ReviewById" />
+          <ScalarProperty Name="AgainstDownloadId" ColumnName="AgainstDownloadId" />
+          <ScalarProperty Name="Ratings" ColumnName="Ratings" />
+          <ScalarProperty Name="comments" ColumnName="comments" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SellNotes">
+      <EntityTypeMapping TypeName="NotMarketPlaceModel.SellNote">
+        <MappingFragment StoreEntitySet="SellNotes">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Seller_Id" ColumnName="Seller_Id" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="ActionBy" ColumnName="ActionBy" />
+          <ScalarProperty Name="AdminRemarks" ColumnName="AdminRemarks" />
+          <ScalarProperty Name="Published_date" ColumnName="Published_date" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="Category" ColumnName="Category" />
+          <ScalarProperty Name="Display_pic" ColumnName="Display_pic" />
+          <ScalarProperty Name="NoteType" ColumnName="NoteType" />
+          <ScalarProperty Name="NumberofPages" ColumnName="NumberofPages" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="University_Name" ColumnName="University_Name" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="Course" ColumnName="Course" />
+          <ScalarProperty Name="Course_Code" ColumnName="Course_Code" />
+          <ScalarProperty Name="Professor_name" ColumnName="Professor_name" />
+          <ScalarProperty Name="IsPaid" ColumnName="IsPaid" />
+          <ScalarProperty Name="SellingPrice" ColumnName="SellingPrice" />
+          <ScalarProperty Name="NotePrivew" ColumnName="NotePrivew" />
+          <ScalarProperty Name="Created_Date" ColumnName="Created_Date" />
+          <ScalarProperty Name="Created_By" ColumnName="Created_By" />
+          <ScalarProperty Name="Modified_Date" ColumnName="Modified_Date" />
+          <ScalarProperty Name="Modified_By" ColumnName="Modified_By" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SystemConfigurations">
+      <EntityTypeMapping TypeName="NotMarketPlaceModel.SystemConfiguration">
+        <MappingFragment StoreEntitySet="SystemConfiguration">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="KeyName" ColumnName="KeyName" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserProfiles">
+      <EntityTypeMapping TypeName="NotMarketPlaceModel.UserProfile">
+        <MappingFragment StoreEntitySet="UserProfile">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="User_Id" ColumnName="User_Id" />
+          <ScalarProperty Name="DOB" ColumnName="DOB" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="SecondaryEmail_Id" ColumnName="SecondaryEmail_Id" />
+          <ScalarProperty Name="Country_Code" ColumnName="Country_Code" />
+          <ScalarProperty Name="Phone_number" ColumnName="Phone_number" />
+          <ScalarProperty Name="Profile_pic" ColumnName="Profile_pic" />
+          <ScalarProperty Name="Address1" ColumnName="Address1" />
+          <ScalarProperty Name="Address2" ColumnName="Address2" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="University" ColumnName="University" />
+          <ScalarProperty Name="College" ColumnName="College" />
+          <ScalarProperty Name="Created_Date" ColumnName="Created_Date" />
+          <ScalarProperty Name="Created_By" ColumnName="Created_By" />
+          <ScalarProperty Name="Modified_Date" ColumnName="Modified_Date" />
+          <ScalarProperty Name="Modified_By" ColumnName="Modified_By" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserRoles">
+      <EntityTypeMapping TypeName="NotMarketPlaceModel.UserRole">
+        <MappingFragment StoreEntitySet="UserRole">
+          <ScalarProperty Name="Role_Id" ColumnName="Role_Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Created_Date" ColumnName="Created_Date" />
+          <ScalarProperty Name="Created_By" ColumnName="Created_By" />
+          <ScalarProperty Name="Modified_Date" ColumnName="Modified_Date" />
+          <ScalarProperty Name="Modified_By" ColumnName="Modified_By" />
+          <ScalarProperty Name="Is_Active" ColumnName="Is_Active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="NotMarketPlaceModel.User">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="First_Name" ColumnName="First_Name" />
+          <ScalarProperty Name="Last_Name" ColumnName="Last_Name" />
+          <ScalarProperty Name="Email_Id" ColumnName="Email_Id" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Is_Email_Verified" ColumnName="Is_Email_Verified" />
+          <ScalarProperty Name="Created_Date" ColumnName="Created_Date" />
+          <ScalarProperty Name="Created_By" ColumnName="Created_By" />
+          <ScalarProperty Name="Modified_Date" ColumnName="Modified_Date" />
+          <ScalarProperty Name="Modified_By" ColumnName="Modified_By" />
+          <ScalarProperty Name="Is_Active" ColumnName="Is_Active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

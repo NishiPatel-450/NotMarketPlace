@@ -1,0 +1,64 @@
+﻿<style>
+    .nav li.dropdown ul {
+        background-color: #fff;
+        position: absolute;
+        left: 0;
+        padding-left: 0;
+        min-width: 180px;
+        display:none;
+     }
+    .nav li.dropdown ul li{
+        padding:10px;
+    }
+    .nav li.dropdown ul li{
+        width: 180px;
+    }
+    .nav li.dropdown:hover ul {
+        display: block;
+        list-style-type: none;
+    }
+    .dropdown ul li:hover {
+        background-color: #6255a5;
+    }
+    .dropdown ul li.logout .link {
+        color: #6255a5;
+    }
+    .dropdown ul li .menulink {
+        color: #000000;
+    }
+    .dropdown ul li:hover .link{
+        color: #fff;
+        text-decoration:none;
+    }
+</style>
+
+<ul class="nav navbar-nav navbar-right">
+    <li>@Html.ActionLink("Search Notes", "SearchNotes", "Notes", routeValues: null, htmlAttributes: new { id = "contactlink" })</li>
+    <li>@Html.ActionLink("Sell Your Notes", "ViewNotes", "Notes", routeValues: null, htmlAttributes: new { id = "noteslink" })</li>
+    <li>@Html.ActionLink("FAQ", "FAQPage", "Home", routeValues: null, htmlAttributes: new { id = "faqlink" })</li>
+    <li>@Html.ActionLink("Contact Us", "Contact", "Home", routeValues: null, htmlAttributes: new { id = "contactlink" })</li>
+    @if (User.Identity.IsAuthenticated)
+    {
+        
+        <li class="dropdown">
+    
+            <a href="#"><img src="~/img/user-img.png"/></a>
+            <ul>
+                <li>@Html.ActionLink("My Profile", "UserProfile", "RegisterUser", routeValues: null, htmlAttributes: new { @class = "link menulink" })</li>
+                <li>@Html.ActionLink("My Downloads", "DownloadNotes", "Notes", routeValues: null, htmlAttributes: new { @class = "link menulink" })</li>
+                <li>@Html.ActionLink("My Sold Notes", "SoldNotes", "Notes", routeValues: null, htmlAttributes: new { @class = "link menulink" })</li>
+                <li>@Html.ActionLink("My Rejected Notes", "Logout", "RegisterUser", routeValues: null, htmlAttributes: new { @class = "link menulink" })</li>
+                <li>@Html.ActionLink("Change Password", "Logout", "RegisterUser", routeValues: null, htmlAttributes: new { @class = "link menulink" })</li>
+                <li class="logout">
+                    @Html.ActionLink("Logout", "Logout", "RegisterUser", routeValues: null, htmlAttributes: new { @class = "link" })
+                </li>
+            </ul>
+        </li>
+        <li>@Html.ActionLink("Logout", "Logout", "RegisterUser", routeValues: null, htmlAttributes: new { id = "logoutlink", @class = "btn" });</li>
+    }
+    else
+    {
+        <li>@Html.ActionLink("Log in", "Login", "RegisterUser", routeValues: null, htmlAttributes: new { id = "loginLink", @class = "btn" })</li>
+    }
+</ul>
+

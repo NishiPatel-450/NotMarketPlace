@@ -1,0 +1,317 @@
+.navbar-header {
+    position: relative;
+}
+
+#mobile-nav-open-btn {
+    font-size: 30px;
+    color: #fff;
+    cursor: pointer;
+    z-index: 2;
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: none;
+}
+
+#mobile-nav-close-btn {
+    font-family: "Raleway", sans-serif;
+    font-size: 70px;
+    color: #6255a5;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    right::;
+    -webkit-transition: .3s;
+    transition: .3s;
+}
+
+#mobile-nav {
+    height: 0%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    background-color: rgba(255, 255, 255, 1);
+    transition: all 300ms linear;
+    overflow-y: hidden;
+}
+
+
+#mobile-nav-content {
+    width: 100%;
+    margin-top: 30px;
+    position: relative;
+    top: 10%;
+}
+
+#mobile-nav ul li {
+    border-top: 1px solid #6255a5; 
+    padding: 20px;
+}
+
+#mobile-nav li a{
+    font-family: "Ralewaay", sans-serif;
+    font-size: 20px;
+    color: #6255a5;
+    font-weight: 400;
+    text-transform: uppercase;
+    display: inline;
+    -webkit-transition: .3s;
+    transition: .3s;
+}
+#mobile-nav .btn{ 
+    padding: 10px;
+    margin: 15px;
+}
+
+#mobile-nav a:hover,
+#mobile-nav a:focus,
+#mobile-nav-close-btn:hover,
+#mobile-nav-close-btn:focus {
+    color: #fff;
+    background: none;
+}
+
+.white-nav-top #mobile-nav ul.nav > li.active > a {
+    color: #fff;
+    font-weight: 500;
+}
+
+
+/*Large Device*/
+@media (min-width:1200px) {
+    .testimonial-item{
+        width: 570px;
+        height: 310px;
+    }
+    .review-content .rate{
+        margin-left: 0px;
+    }
+    .notes .card-2 {
+        margin-left: 30px;
+    }
+    .admin-card button{
+        width: 370px;
+    }
+}
+
+/*Medium Device*/
+@media (min-width:992px) and (max-width: 1199px) {
+    .testimonial-item{
+        width: 450px;
+        height: 310px;
+    }
+    .testimonial-item h3,.testimonial-item h6{
+        margin-left: 15%;
+        margin-top: 3%;
+    }
+    .testimonial-item p{
+        margin-top: 3%;
+    }
+    #about-02 .img1{
+        margin-left: 34%;
+    }
+    .about-items{
+        padding-left: 6%;
+        padding-right: 6%;
+    }
+    .note-brief{
+        margin-left: 10px;
+    }
+    .note-brief .btn{
+        margin-top: 0px;
+    }
+    .note-pdf,
+    .reviews {
+        height: 550px;
+    }
+    .customer-review{
+        margin-left: 10%;
+    }
+    .ratings {
+        margin-left: -9px;
+    }
+    .form-select{
+        width: 130px;
+    }
+    .notes .card {
+        margin-left: 7%;
+    }
+    #notes-details,#dashboard1{
+        margin-top: 15%;
+    }
+    #dashboard{
+        margin-top: 18%;
+    }
+    .navbar{
+        padding: 0px;
+    }
+    .navbar ul li>a{
+        text-align: center;
+        font-size: 15px;
+    }
+
+}
+
+/*Small Device*/
+@media (min-width:768px) and (max-width: 991px) {
+    html{
+        width: 105%;
+    }
+    
+    .navbar{
+        padding: 0px;
+    }
+    .navbar ul li>a{
+        text-align: center;
+        font-size: 15px;
+    }
+    #about h1, #about p{
+        text-align: center;
+        margin-bottom: 30px;
+    }
+    .about-item{
+        padding: 5%;
+    }
+    #about-02 .btn{
+        margin-top: 0px;
+    }
+    .testimonial-item {
+        height: 330px;
+    }
+    .testimonial-item-2{
+        margin-left: 0px;
+    }
+    #about-02 .img1{
+        margin-left: 27%;
+    }
+    #notes-details,#dashboard1{
+        margin-top: 20%;
+    }
+    #dashboard{
+        margin-top: 20%;
+    }
+    .note-details{
+        margin-left: 10%;
+    }
+    .notes .card-2 {
+        margin-left: 0px;
+    }
+}
+
+/*Extra Small Device*/
+@media (max-width: 767px) {
+    html{
+        width: 178%;
+    }
+    .navbar {
+        padding: 20px 0;
+    }
+    .site-nav-wrapper,
+    .white-nav-top {
+        padding-top: 10px;
+    }
+    .white-nav-top #mobile-nav-open-btn,.white-nav-top #mobile-nav-close-btn{
+        color: #6255a5;
+        margin-top: 15px;
+    }
+    #mobile-nav-open-btn,#mobile-nav-close-btn {
+        display: block;
+        margin-right: 20px;
+        margin-top: 5px;
+    }
+    #about h1, #about p{
+        text-align: center;
+        margin-bottom: 30px;
+    }
+    #about-02 .img1{
+        position: relative;
+        top: 0;
+        left: 5%;
+    }
+    #about-02 .btn{
+        margin-bottom: 4%;
+    }
+    .testimonial-item .col-sm-10{
+        width: 300px;
+        position: relative;
+        top: 10%;
+        left: 15%;
+    }
+    .testimonial-item-2{
+        margin-left: 0px;
+    }
+    footer .row{
+        padding-top: 2%;
+    }
+    
+    .note-details{
+        margin-left: 25%;
+    }
+}
+
+/*Extra Small Device*/
+@media (max-width: 480px) {
+    html{
+        width: 250%;
+    }
+    #about h1, #about p{
+        text-align: center;
+        margin-bottom: 30px;
+    }
+    #about-02 .img1{
+        position: relative;
+        top: 0;
+        left: 7%;
+    }
+    #about-02 .btn{
+        margin-bottom: 4%;
+    }
+    .testimonial-item{
+        height: 300px;
+    }
+
+    .note-details{
+        margin-left: 27%;
+    }
+    #dashboard{
+        margin-top: 20%:
+    }
+}
+
+/*Extra Small Device*/
+@media (max-width: 320px) {
+    .testimonial-item{
+        height: 350px;
+    }
+    .testimonial-item .col-sm-10{
+        width: 300px;
+        position: absolute;
+        top: 10%;
+        left: 20%;
+    }
+    #about h1, #about p{
+        text-align: center;
+        margin-bottom: 30px;
+    }
+    #about-02 .img1{
+        position: relative;
+        top: 0;
+        left: 4%;
+    }
+    #about-02 .btn{
+        margin-bottom: 4%;
+    }
+    .note-details{
+        margin-left: 27%;
+    }
+    #faq-home .bg-img {
+        position: relative;
+        top: -10;
+    }
+    #dashboard{
+        margin-top: 20%:
+    }
+}
+

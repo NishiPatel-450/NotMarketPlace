@@ -1,0 +1,11 @@
+{
+  "ExpandedNodes": [
+    "\\EmailConfirm",
+    "\\EmailConfirm\\App_Start",
+    "\\EmailConfirm\\Controllers",
+    "\\EmailConfirm\\Views",
+    "\\EmailConfirm\\Views\\Home",
+    "\\EmailConfirm\\Views\\RegisterUser"
+  ],
+  "PreviewInSolutionExplorer": false
+}

@@ -1,0 +1,82 @@
+﻿@model EmailConfirm.Models.Register
+
+@{
+    Layout = "~/Views/Shared/css_js.cshtml";
+}
+<section id="signup">
+    <div class="signup container">
+        <div class="login-content row">
+            <div class="logo text-center col-md-12 col-sm-12 col-xs-12">
+                <img src="~/img/top-logo.png">
+            </div>
+            <div class="col-md-4 col-sm-4 col-xs-4"></div>
+                  <div class="login-form col-md-4 col-sm-4 col-xs-4">
+                <div class="heading text-center">
+                    <h3>Create an Account</h3>
+                    <p>Enter Your details to signup</p>
+                </div>
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-horizontal contactform">
+
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.FirstName, htmlAttributes: new { @class = "col-md-12" })
+                        <div class="col-md-12">
+                            @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @class = "form-control", placeholder = "Enter First Name" } })
+                            @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.LastName, htmlAttributes: new { @class = "col-md-12" })
+                        <div class="col-md-12">
+                            @Html.EditorFor(model => model.LastName, new { htmlAttributes = new { @class = "form-control", placeholder = "Enter Last Name"} })
+                            @Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.EmailId, htmlAttributes: new { @class = "col-md-12" })
+                        <div class="col-md-12">
+                            @Html.EditorFor(model => model.EmailId, new { htmlAttributes = new { @class = "form-control", placeholder = "Enter Email Address" } })
+                            @Html.ValidationMessageFor(model => model.EmailId, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "col-md-12" })
+                        <div class="col-md-12">
+                            @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control", placeholder = "Enter Password" } })
+                            @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.ConfirmPassword, htmlAttributes: new { @class = "col-md-12" })
+                        <div class="col-md-12">
+                            @Html.EditorFor(model => model.ConfirmPassword, new { htmlAttributes = new { @class = "form-control", placeholder = "Enter Confirm Password" } })
+                            @Html.ValidationMessageFor(model => model.ConfirmPassword, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="submit" value="SIGN UP" class="btn col-md-12" />
+                    </div>
+                    <p class="text-center">
+                        Don't have an account?
+                        @Html.ActionLink("Login","Login", "RegisterUser")
+                    </p>
+               
+            </div>
+        }
+
+            </div>
+            <div class="col-md-4 col-sm-4 col-xs-4"></div>
+        </div>
+    </div>
+</section>  

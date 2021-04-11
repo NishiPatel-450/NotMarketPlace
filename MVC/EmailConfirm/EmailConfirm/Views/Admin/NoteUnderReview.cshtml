@@ -1,0 +1,35 @@
+﻿@model IEnumerable<EmailConfirm.SellNote>
+
+    @{
+        ViewBag.Title = "NoteUnderReview";
+        Layout = "~/Views/Shared/css_js.cshtml";
+        Layout = "~/Views/Shared/AdminNav.cshtml";
+        WebGrid webGrid = new WebGrid(source: Model);
+    }
+
+    <section id="dashboard1">
+        <div class="dashboard-card">
+            <div class="heading-bar container">
+                <div class="row">
+                    <div class="col-md-6 col-sm-6 col-xs-6">
+                        <h2>Note Under Review</h2>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        @webGrid.GetHtml(
+        htmlAttributes: new { @id = "WebGrid", @class = "Grid table" },
+        columns: webGrid.Columns(webGrid.Column("Id", "SR NO."), webGrid.Column("title", "Note Title"),
+        webGrid.Column("Category", "Note Category"), webGrid.Column("Seller_Id", "Seller"), webGrid.Column("Status", "Date Added"),
+        webGrid.Column("Status", "Status"),
+        webGrid.Column("Action", style: "button",
+            format: (item) => new HtmlString("<button class='btn btn-success'>" + @Html.ActionLink("Approve", "ApproveNote", "Admin", new { id = item.id }, new { onclick = "return confirm('If you approve the notes – System will publish the notes over portal. Please press yes to continue');" }) + "</button>"
+            + "<button class='btn btn-danger'>" + @Html.ActionLink("Reject", "RejectNote", "Admin", new { id = item.id }, new { onclick = "return confirm('Are you sure you want to reject seller request?');" }) + "</button>"
+             + "<button class='btn btn-review'>" + @Html.ActionLink("InReview", "InReviewNote", "Admin", new { id = item.id }, new { onclick = "return confirm('Via marking the note In Review – System will let user know that review process has been initiated.Please press yes to continue');" }) + "</button>"
+             ))
+        ))
+    </div>

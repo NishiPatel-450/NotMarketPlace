@@ -1,0 +1,288 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <title>Notes Marketplace</title>
+    <link rel="stylesheet" href="~/css/Bootstrap/bootstrap.min.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="shortcut icon" href="~/img/favicon.ico">
+
+    <link rel="stylesheet" href="~/css/font-awesome/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="~/css/style.min.css">
+
+    <link rel="stylesheet" href="~/css/responsive.css">
+
+</head>
+
+<body>
+
+    <!--Header-->
+    <header>
+        <nav class="navbar navbar-fixed-top">
+            <div class="container">
+                <div class="site-nav-wrapper row">
+                    <div class="navbar-header row col-md-6 col-sm-6">
+                        <!--Logo-->
+                        <a href="@Url.Action("Index", "Home")" class="link col-xs-9">
+                            <img alt="Logo" src="~/img/top-logo.png" style="margin-top:8%;">
+                        </a>
+                       
+                        <!--Mobile menu Open Button-->
+                        <span id="mobile-nav-open-btn" class="col-xs-2">&#9776;</span>
+                    </div>
+                    <!--Main Menu-->
+                    <div class="collapse navbar-collapse col-md-6 col-sm-12">
+                        <ul class="nav navbar-nav">
+                            <li>
+                                @Html.Partial("_LoginPartial")
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!--Mobile menu-->
+                    <div id="mobile-nav">
+                        <div class="row">
+                            <a href="index.html" class="col-xs-9" style="margin-top: 5%;">
+                                <img src="~/img/logo.png" alt="logo">
+                            </a>
+                            <span id="mobile-nav-close-btn" class="col-xs-2">&times;</span>
+                        </div>
+                        <div id="mobile-nav-content">
+                            <ul class="nav1 text-left">
+                                @Html.Partial("_LoginPartial")
+
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!--Home Page-->
+    <section id="home">
+        <!--Home Content-->
+        <div class="bg-img">
+            <div id="home-content">
+                <div id="home-content-inner">
+                    <div class="container">
+                        <div id="home-heading">
+                            <h1 id="home-heading-1">Download Free/Paid Notes<br>or Sales your Book</h1>
+                        </div>
+                        <div id="home-text">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque itaque soluta eveniet optio quos rerum nostrum ipsa.</p>
+                        </div>
+                        <div id="home-btn">
+                            <a href="Home/FAQPage.cshtml" title="Learn More" role="button">
+                                @Html.ActionLink("LEARN MORE", "FAQPage", "Home", routeValues: null, htmlAttributes: new { id = "faqlink", @class = "btn btn-general btn-home" })
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--About-->
+    <section id="about">
+        <div class="about-01 content-box-lg">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div id="about-left">
+                            <div class="horizontal-heading">
+                                <h1>About <br>NotesMarketPlace</h1>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="about-right">
+                            <p class="p1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem facilis ipsa ullam ducimus laborum accusamus odio dicta at, pariatur optio voluptatum, sequi accusantium dolore saepe quis reiciendis! Ipsam, aliquid, minima.</p>
+
+                            <p class="p2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus reiciendis necessitatibus eius cum esse, voluptas repellendus laborum non quae, cupiditate, impedit aut nesciunt provident et repudiandae odio suscipit ab, est!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="about-02">
+            <div class="container">
+                <div class="row">
+                    <div class="horizontal-heading text-center">
+                        <h1>How it Works</h1>
+                    </div>
+                </div>
+
+                <div class="row about-items">
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <div class="about-item text-center">
+                            <div class="img1">
+                                <img src="~/img/download.png" class="float-left">
+                            </div>
+                            <h3>Download Free/Paid Notes</h3>
+                            <p>Get Material for your<br> cource etc.</p>
+                            <div>
+                                @Html.ActionLink("Download","SearchNotes","Notes",routeValues:null,htmlAttributes: new { @class = "btn btn-general btn-home" });
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <div class="about-item text-center">
+                            <div class="img1">
+                                <img src="~/img/seller.png" class="float-left">
+                            </div>
+                            <h3>Seller</h3>
+                            <p>Upload and Download Cource<br>and Materials etc.</p>
+                            <div>
+                                @Html.ActionLink("Sell Note", "ViewNotes", "Notes", routeValues: null, htmlAttributes: new { @class = "btn btn-general btn-home" });
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--Testimonial-->
+    <section id="testimonials">
+        <div class="container">
+            <div class="row">
+                <div class="horizontal-heading text-center">
+                    <h1>What Our Customers are Saying</h1>
+                </div>
+            </div>
+        </div>
+        <div class="container testimonial">
+            <div class="row testimonial-1">
+                <div class="col-md-5 col-sm-12 col-xs-12 testimonial-item">
+                    <div class="row">
+                        <div class="col-md-3 col-sm-2 col-xs-2">
+                            <img src="~/img/customer-1.png">
+                        </div>
+                        <div class="col-md-8 col-sm-10 col-xs-10">
+                            <h3>Walter Meller</h3>
+                            <h6>Founder & CEO Matrix Group</h6>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <p>"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus asperiores excepturi iste amet optio quibusdam cumque eos impedit illum eum, repellendus ipsam, autem, distinctio."</p>
+                    </div>
+                </div>
+                <div class="col-md-5 col-sm-12 col-xs-12 testimonial-item testimonial-item-2">
+                    <div class="row">
+                        <div class="col-md-3 col-sm-2 col-xs-2">
+                            <img src="~/img/customer-2.png">
+                        </div>
+                        <div class="col-md-8 col-sm-10 col-xs-10">
+                            <h3>Walter Meller</h3>
+                            <h6>Founder & CEO Matrix Group</h6>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <p>"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus asperiores excepturi iste amet optio quibusdam cumque eos impedit illum eum, repellendus ipsam, autem, distinctio."</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row testimonial-2">
+                <div class="col-md-5 col-sm-12 col-xs-12 testimonial-item">
+                    <div class="row">
+                        <div class="col-md-3 col-sm-2 col-xs-2">
+                            <img src="~/img/customer-3.png">
+                        </div>
+                        <div class="col-md-8 col-sm-10 col-xs-10">
+                            <h3>Walter Meller</h3>
+                            <h6>Founder & CEO Matrix Group</h6>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <p>"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus asperiores excepturi iste amet optio quibusdam cumque eos impedit illum eum, repellendus ipsam, autem, distinctio."</p>
+                    </div>
+                </div>
+                <div class="col-md-5 col-sm-12 col-xs-12 testimonial-item testimonial-item-2">
+                    <div class="row">
+                        <div class="col-md-3 col-sm-2 col-xs-2">
+                            <img src="~/img/customer-4.png">
+                        </div>
+                        <div class="col-md-8 col-sm-10 col-xs-10">
+                            <h3>Walter Meller</h3>
+                            <h6>Founder & CEO Matrix Group</h6>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <p>"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus asperiores excepturi iste amet optio quibusdam cumque eos impedit illum eum, repellendus ipsam, autem, distinctio."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--Footer-->
+    <footer id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-sm-6 col-xs-6">
+                    <p>Copyright &copy; Tatvasoft All right reserved.</p>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-6 text-right">
+                    <ul class="social-list">
+                        <li><a href="https://www.facebook.com/"><img src="~/img/facebook.png"></a></li>
+                        <li><a href="https://twitter.com/"><img src="~/img/twitter.png"></a></li>
+                        <li><a href="https://www.linkedin.com/"><img src="~/img/linkedin.png"></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!--Scripts-->
+    <!--jQuery-->
+
+    <script src="js/jquery.js"></script>
+
+    <!--Bootstrap-->
+    <script src="js/Bootstrap/bootstrap.min.js"></script>
+
+    <script src="js/easing/easing.min.js"></script>
+
+    <script src="js/script.js"></script>
+    <script>
+        $(function () {
+            $(window).scroll(function () {
+                showHideNav();
+            });
+            function showHideNav() {
+                if ($(window).scrollTop() > 50) {
+                    $("nav").addClass("white-nav-top");
+                    $(".link img").attr("src", "~/img/logo.png");
+                   // $("#back-to-top").fadeIn();
+                }
+                else {
+                    $("nav").removeClass("white-nav-top");
+                    $(".link img").attr("src", "~/img/top-logo.png");
+                    //$("#back-to-top").fadeOut();
+                }
+            }
+            //showHideNav();
+
+            
+
+        });
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,127 @@
+﻿@model IEnumerable<EmailConfirm.SellNote>
+
+@{
+    ViewBag.Title = "Dashboard";
+    Layout = "~/Views/Shared/css_js.cshtml";
+    Layout = "~/Views/Shared/AdminNav.cshtml";
+}
+
+<section id="dashboard">
+    <div class="dashboard-card">
+        <div class="heading-bar container">
+            <div class="row">
+                <div class="col-md-6 col-sm-6 col-xs-6">
+                    <h2 class="row">Dashboard</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="admin-card">
+        <div class="container">
+            <form class="row ml-1 col-md-12 col-sm-12 col-xs-12">
+                <button class="col-md-4 col-sm-4 col-xs-4 text-center" style="background-color: #fff;" formaction="note_under_review.html">
+                    <h2>20</h2>
+                    <p>Number of Notes in Review for Publish</p>
+                </button>
+                <button class="col-md-4 col-sm-4 col-xs-4 text-center" style="background-color: #fff;left: 0;" formaction="download_notes.html">
+                    <h2>103</h2>
+                    <p>Number of New Notes Downloades(Last 7 Days)</p>
+                </button>
+                <button class="col-md-4 col-sm-4 col-xs-4 text-center" style="background-color: #fff;left:10;" formaction="memebers.html">
+                    <h2>223</h2>
+                    <p>Number of New registration(Last 7 Days)</p>
+                </button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<section id="progress-notes">
+    <div class="heading-bar container">
+        <div class="row">
+            <div class="col-md-3 col-sm-12 col-xs-12">
+                <h3 class="row">Published Notes</h3>
+            </div>
+            <div class="col-md-9 col-sm-12 col-xs-12">
+                <form role="form" class="row form1">
+                    <div class="col-md-2 col-sm-6 col-xs-6 form-group has-feedback has-feedback-left">
+                        <img src="img/search-icon.png" class="form-control-feedback">
+                        <input type="text" class="form-control" placeholder="Search" />
+                    </div>
+                    <div class="col-md-5 col-sm-1 col-xs-1">
+                        <button class="btn">SEARCH</button>
+                    </div>
+                    <div class="col-md-5 col-sm-6 col-xs-6 text-right">
+                        <select class="form-select">
+                            <option>select month</option>
+                        </select>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="sold-table-list">
+        <div class="container">
+            <div class="row">
+                <table class="table col-md-12 col-sm-12 col-xs-12">
+                    <tr>
+                        <th>SR NO.</th>
+                        <th>TITLE</th>
+                        <th>CATEGORY</th>
+                        <th>ATTACHMENT SIZE</th>
+                        <th>SELL TYPE</th>
+                        <th>PRICE</th>
+                        <th>PUBLISHER</th>
+                        <th>PUBLISHED DATE</th>
+                        <th>NUMBER OF DOWNLOADS</th>
+                        <th></th>
+                    </tr>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td> @Html.DisplayFor(modelItem => item.Id)</td>
+                            <td class="titile-text">@Html.DisplayFor(modelItem => item.title)</td>
+                            <td> @Html.DisplayFor(modelItem => item.Category)</td>
+                            <td>10KB</td>
+                            <td>False</td>
+                            <td> @Html.DisplayFor(modelItem => item.SellingPrice)</td>
+                            <td>Pritesh Panchal</td>
+                            <td>09-10-2020,10:10</td>
+                            <td>10</td>
+                            <td><ul class="nav navbar-nav">
+                                    <li class="dropdown">
+                                        <a href="#"><img src="~/img/dots.png" /></a>
+                                        <ul>
+                                            <li>@Html.ActionLink("Downloade Notes", "Logout", "RegisterUser", new { @class = "link menulink" })</li>
+                                            <li>@Html.ActionLink("View Details", "NoteDetails", "Notes", new { @class = "link menulink" })</li>
+                                            <li>@Html.ActionLink("Unpublish", "Logout", "RegisterUser", new { @class = "link menulink" })</li>
+                             
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    }
+                    </table>
+                <div class="popup">
+                    <ul><li>Download</li></ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="container page" aria-label="Page navigation example">
+        <ul class="pagination">
+            <li><a class="page-link-img" href="#"><img src="img/left-arrow.png"></a></li>
+            <li><a class="page-link" href="#">1</a></li>
+            <li><a class="page-link" href="#">2</a></li>
+            <li><a class="page-link" href="#">3</a></li>
+            <li><a class="page-link" href="#">4</a></li>
+            <li><a class="page-link" href="#">5</a></li>
+            <li><a class="page-link-img" href="#"><img src="img/right-arrow.png"></a></li>
+        </ul>
+    </div>
+</section>
+
