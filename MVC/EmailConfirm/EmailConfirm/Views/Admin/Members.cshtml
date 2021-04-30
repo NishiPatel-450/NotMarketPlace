@@ -1,0 +1,104 @@
+﻿@model IEnumerable<EmailConfirm.Models.Members>
+@{
+    ViewBag.Title = "Members";
+    Layout = "~/Views/Shared/css_js.cshtml";
+    Layout = "~/Views/Shared/AdminNav.cshtml";
+    WebGrid webGrid = new WebGrid(source: Model);
+}
+<style>
+    .nav li.dropdown ul {
+        background-color: #fff;
+        position: absolute;
+        /*left: 0;
+        padding-left: 0;
+        */ min-width: 180px;
+        display: none;
+    }
+
+        .nav li.dropdown ul li {
+            padding: 10px;
+        }
+
+        .nav li.dropdown ul li {
+            width: 180px;
+        }
+
+    .nav li.dropdown:hover ul {
+        display: block;
+        list-style-type: none;
+    }
+
+    .dropdown ul li:hover {
+        background-color: #6255a5;
+        color:#fff;
+    }
+
+    .dropdown ul li.logout .link {
+        color: #6255a5;
+    }
+
+    .dropdown ul .menulink {
+        color: #000000;
+    }
+
+    .dropdown ul li:hover .link {
+        color: #fff;
+        text-decoration: none;
+    }
+</style>
+
+
+<section id="dashboard">
+    <div class="heading-bar container">
+        <div class="row">
+            <div class="col-md-6 col-sm-5 col-xs-6">
+                <h3 class="row">Members</h3>
+            </div>
+            <div class="col-md-6 col-sm-6 col-xs-12">
+                @using (Html.BeginForm("Members", "Admin", FormMethod.Get, new { @class = "form1 row" }))
+                {<div class="col-md-9 col-sm-9 col-xs-7 form-group searchinput">
+                        <img src="~/img/search-icon.png" class="form-control-feedback">
+                        <input type="text" class="form-control" placeholder="Search" name="searching" />
+                    </div>
+                    <div class="col-md-2 col-sm-2 col-xs-2">
+                        <button class="btn">SEARCH</button>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+    
+    <div class="container">
+        @if (Model.Count() == 0)
+        {
+            <h4 colspan="10" style="color:red;text-align:center">Data Not Found</h4>           
+        }
+        else
+        {
+            @webGrid.GetHtml(
+             htmlAttributes: new { @id = "WebGrid", @class = "Grid table sold-table-list" },
+             columns: webGrid.Columns(webGrid.Column("Id", "SR NO."),
+             webGrid.Column("FirstName", "First Name"),
+             webGrid.Column("LastName", "Last Name"),
+             webGrid.Column("Email", "Email"),
+             webGrid.Column("Joiningdate", "Joining Date"),
+             webGrid.Column("Action", style: "Image",
+                                  format: (item) => new HtmlString(" <ul class='nav navbar-nav'>" +
+                                             "<li class='dropdown'>" +
+                                                 "<img src='/img/dots.png' id='noteslink'/>" +
+                                                 "<ul>" +
+                                                     "<li class = 'link menulink'>" + @Html.ActionLink("View More Details", "MemberDetails", "Admin", new { id = item.id }, null) +
+                                                     "</li>" +
+                                                     "<li>" + @Html.ActionLink("Published Notes", "AdminPublishNote", "Admin", routeValues: null, htmlAttributes: new { @class = "link menulink" }) +
+                                                    " </li>" +
+                                                 "</ul>" +
+                                             "</li>" +
+                                             "</ul>"
+                                 )
+                    )
+                    ))
+        }
+        </div>
+</section>
+
+

@@ -36,9 +36,6 @@
     <Property Name="Seller" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="Downloader" Type="int" Nullable="false" />
     <Property Name="BuyerEmailId" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="IsSellerHasAllowedDownload" Type="bit" />
-    <Property Name="AttachmentPath" Type="varchar(max)" />
-    <Property Name="IsAttachmentDownloaded" Type="bit" />
     <Property Name="AttachmentDownloadedDate" Type="datetime" />
     <Property Name="IsPaid" Type="bit" Nullable="false" />
     <Property Name="PurchasedPrice" Type="decimal" Precision="18" Scale="0" />
@@ -83,20 +80,6 @@
     <Property Name="ModifiedBy" Type="int" />
     <Property Name="IsActive" Type="bit" Nullable="false" />
   </EntityType>
-  <EntityType Name="RefernceData">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="int" Nullable="false" />
-    <Property Name="Value" Type="varchar" MaxLength="100" Nullable="false" />
-    <Property Name="DataValue" Type="varchar" MaxLength="100" Nullable="false" />
-    <Property Name="RefCategoey" Type="varchar" MaxLength="100" Nullable="false" />
-    <Property Name="CreatedDate" Type="datetime" />
-    <Property Name="CreatedBy" Type="int" />
-    <Property Name="ModifiedDate" Type="datetime" />
-    <Property Name="ModifiedBy" Type="int" />
-    <Property Name="IsActive" Type="bit" Nullable="false" />
-  </EntityType>
   <EntityType Name="Registers">
     <Key>
       <PropertyRef Name="Id" />
@@ -112,7 +95,7 @@
     <Key>
       <PropertyRef Name="Id" />
     </Key>
-    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="NoteTitle" Type="varchar" MaxLength="50" />
     <Property Name="RejectedBy" Type="varchar" MaxLength="50" />
     <Property Name="Remark" Type="varchar" MaxLength="100" />
@@ -122,15 +105,15 @@
     <Key>
       <PropertyRef Name="ID" />
     </Key>
-    <Property Name="ID" Type="int" Nullable="false" />
-    <Property Name="NoteID" Type="int" Nullable="false" />
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NoteTitle" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="FileName" Type="varchar" MaxLength="100" Nullable="false" />
-    <Property Name="FilePath" Type="varbinary(max)" Nullable="false" />
+    <Property Name="FileContent" Type="varbinary(max)" Nullable="false" />
     <Property Name="CreatedDate" Type="datetime" />
     <Property Name="CreatedBy" Type="varchar" MaxLength="50" />
     <Property Name="ModifiedDate" Type="datetime" />
     <Property Name="ModifiedBy" Type="varchar" MaxLength="50" />
-    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="AttachmentSize" Type="decimal" Precision="18" Scale="0" Nullable="false" />
   </EntityType>
   <EntityType Name="SellerNotesReportedIssues">
     <Key>
@@ -171,6 +154,7 @@
     <Property Name="title" Type="varchar" MaxLength="100" Nullable="false" />
     <Property Name="Category" Type="varchar" MaxLength="50" />
     <Property Name="Display_pic" Type="varbinary(max)" />
+    <Property Name="FileName" Type="varchar" MaxLength="60" />
     <Property Name="Upload_note" Type="varbinary(max)" />
     <Property Name="NoteType" Type="varchar" MaxLength="50" />
     <Property Name="NumberofPages" Type="int" />
@@ -180,33 +164,14 @@
     <Property Name="Course" Type="varchar" MaxLength="100" Nullable="false" />
     <Property Name="Course_Code" Type="varchar" MaxLength="100" />
     <Property Name="Professor_name" Type="varchar" MaxLength="100" />
-    <Property Name="IsPaid" Type="bit" Nullable="false" />
+    <Property Name="IsPaid" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="SellingPrice" Type="decimal" Precision="18" Scale="0" />
     <Property Name="NotePrivew" Type="nvarchar(max)" />
     <Property Name="Status" Type="varchar" MaxLength="50" />
-  </EntityType>
-  <EntityType Name="SystemConfiguration">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="int" Nullable="false" />
-    <Property Name="KeyName" Type="varchar" MaxLength="100" Nullable="false" />
-    <Property Name="Value" Type="varchar(max)" Nullable="false" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="50" />
     <Property Name="CreatedDate" Type="datetime" />
-    <Property Name="CreatedBy" Type="int" />
+    <Property Name="ModifiedBy" Type="varchar" MaxLength="50" />
     <Property Name="ModifiedDate" Type="datetime" />
-    <Property Name="ModifiedBy" Type="int" />
-    <Property Name="IsActive" Type="bit" Nullable="false" />
-  </EntityType>
-  <EntityType Name="Table">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="int" Nullable="false" />
-    <Property Name="NoteTitle" Type="varchar" MaxLength="50" />
-    <Property Name="RejectedBy" Type="varchar" MaxLength="50" />
-    <Property Name="Remark" Type="varchar" MaxLength="100" />
-    <Property Name="Seller_Id" Type="int" />
   </EntityType>
   <EntityType Name="UserProfile">
     <Key>
@@ -219,7 +184,7 @@
     <Property Name="SecondaryEmail_Id" Type="varchar" MaxLength="100" />
     <Property Name="Country_Code" Type="varchar" MaxLength="5" Nullable="false" />
     <Property Name="Phone_number" Type="varchar" MaxLength="20" Nullable="false" />
-    <Property Name="Profile_pic" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="Profile_pic" Type="varbinary(max)" Nullable="false" />
     <Property Name="Address1" Type="varchar" MaxLength="100" Nullable="false" />
     <Property Name="Address2" Type="varchar" MaxLength="100" Nullable="false" />
     <Property Name="City" Type="varchar" MaxLength="50" Nullable="false" />
@@ -247,7 +212,7 @@
     <Property Name="Modified_By" Type="int" />
     <Property Name="Is_Active" Type="bit" Nullable="false" />
   </EntityType>
-  <Association Name="FK__BuyerRequ__Buyer__10216507">
+  <Association Name="FK__BuyerRequ__Buyer__57A801BA">
     <End Role="UserProfile" Type="Self.UserProfile" Multiplicity="0..1" />
     <End Role="BuyerRequest" Type="Self.BuyerRequest" Multiplicity="*" />
     <ReferentialConstraint>
@@ -259,7 +224,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__BuyerRequ__Selle__0F2D40CE">
+  <Association Name="FK__BuyerRequ__Selle__318258D2">
     <End Role="SellNotes" Type="Self.SellNotes" Multiplicity="0..1" />
     <End Role="BuyerRequest" Type="Self.BuyerRequest" Multiplicity="*" />
     <ReferentialConstraint>
@@ -283,7 +248,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Download__NoteId__0B5CAFEA">
+  <Association Name="FK__Download__NoteId__308E3499">
     <End Role="SellNotes" Type="Self.SellNotes" Multiplicity="1" />
     <End Role="Download" Type="Self.Download" Multiplicity="*" />
     <ReferentialConstraint>
@@ -295,7 +260,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__RejectedN__Selle__1E6F845E">
+  <Association Name="FK__RejectedN__Selle__41B8C09B">
     <End Role="SellNotes" Type="Self.SellNotes" Multiplicity="0..1" />
     <End Role="RejectedNotes" Type="Self.RejectedNotes" Multiplicity="*" />
     <ReferentialConstraint>
@@ -331,19 +296,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__SellerNot__NoteI__15DA3E5D">
-    <End Role="SellNotes" Type="Self.SellNotes" Multiplicity="1" />
-    <End Role="SellerNotesAttachement" Type="Self.SellerNotesAttachement" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="SellNotes">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="SellerNotesAttachement">
-        <PropertyRef Name="NoteID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK__SellerNot__NoteI__671F4F74">
+  <Association Name="FK__SellerNot__NoteI__2F9A1060">
     <End Role="SellNotes" Type="Self.SellNotes" Multiplicity="1" />
     <End Role="SellerNotesReview" Type="Self.SellerNotesReview" Multiplicity="*" />
     <ReferentialConstraint>
@@ -355,7 +308,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__SellerNot__NoteI__6AEFE058">
+  <Association Name="FK__SellerNot__NoteI__3552E9B6">
     <End Role="SellNotes" Type="Self.SellNotes" Multiplicity="1" />
     <End Role="SellerNotesReportedIssues" Type="Self.SellerNotesReportedIssues" Multiplicity="*" />
     <ReferentialConstraint>
@@ -391,7 +344,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__SellNotes__Selle__681373AD">
+  <Association Name="FK__SellNotes__Selle__345EC57D">
     <End Role="Registers" Type="Self.Registers" Multiplicity="1" />
     <End Role="SellNotes" Type="Self.SellNotes" Multiplicity="*" />
     <ReferentialConstraint>
@@ -403,19 +356,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Table__Seller_Id__1B9317B3">
-    <End Role="SellNotes" Type="Self.SellNotes" Multiplicity="0..1" />
-    <End Role="Table" Type="Self.Table" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="SellNotes">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="Table">
-        <PropertyRef Name="Seller_Id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK__UserProfi__User___7C1A6C5A">
+  <Association Name="FK__UserProfi__User___589C25F3">
     <End Role="Registers" Type="Self.Registers" Multiplicity="1" />
     <End Role="UserProfile" Type="Self.UserProfile" Multiplicity="*" />
     <ReferentialConstraint>
@@ -434,22 +375,19 @@
     <EntitySet Name="FileDetails" EntityType="Self.FileDetails" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="NoteCatgories" EntityType="Self.NoteCatgories" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="NoteTypes" EntityType="Self.NoteTypes" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="RefernceData" EntityType="Self.RefernceData" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Registers" EntityType="Self.Registers" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="RejectedNotes" EntityType="Self.RejectedNotes" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="SellerNotesAttachement" EntityType="Self.SellerNotesAttachement" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="SellerNotesReportedIssues" EntityType="Self.SellerNotesReportedIssues" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="SellerNotesReview" EntityType="Self.SellerNotesReview" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="SellNotes" EntityType="Self.SellNotes" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="SystemConfiguration" EntityType="Self.SystemConfiguration" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Table" EntityType="Self.Table" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="UserProfile" EntityType="Self.UserProfile" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="UserRole" EntityType="Self.UserRole" Schema="dbo" store:Type="Tables" />
-    <AssociationSet Name="FK__BuyerRequ__Buyer__10216507" Association="Self.FK__BuyerRequ__Buyer__10216507">
+    <AssociationSet Name="FK__BuyerRequ__Buyer__57A801BA" Association="Self.FK__BuyerRequ__Buyer__57A801BA">
       <End Role="UserProfile" EntitySet="UserProfile" />
       <End Role="BuyerRequest" EntitySet="BuyerRequest" />
     </AssociationSet>
-    <AssociationSet Name="FK__BuyerRequ__Selle__0F2D40CE" Association="Self.FK__BuyerRequ__Selle__0F2D40CE">
+    <AssociationSet Name="FK__BuyerRequ__Selle__318258D2" Association="Self.FK__BuyerRequ__Selle__318258D2">
       <End Role="SellNotes" EntitySet="SellNotes" />
       <End Role="BuyerRequest" EntitySet="BuyerRequest" />
     </AssociationSet>
@@ -457,11 +395,11 @@
       <End Role="Registers" EntitySet="Registers" />
       <End Role="Download" EntitySet="Download" />
     </AssociationSet>
-    <AssociationSet Name="FK__Download__NoteId__0B5CAFEA" Association="Self.FK__Download__NoteId__0B5CAFEA">
+    <AssociationSet Name="FK__Download__NoteId__308E3499" Association="Self.FK__Download__NoteId__308E3499">
       <End Role="SellNotes" EntitySet="SellNotes" />
       <End Role="Download" EntitySet="Download" />
     </AssociationSet>
-    <AssociationSet Name="FK__RejectedN__Selle__1E6F845E" Association="Self.FK__RejectedN__Selle__1E6F845E">
+    <AssociationSet Name="FK__RejectedN__Selle__41B8C09B" Association="Self.FK__RejectedN__Selle__41B8C09B">
       <End Role="SellNotes" EntitySet="SellNotes" />
       <End Role="RejectedNotes" EntitySet="RejectedNotes" />
     </AssociationSet>
@@ -473,15 +411,11 @@
       <End Role="Download" EntitySet="Download" />
       <End Role="SellerNotesReportedIssues" EntitySet="SellerNotesReportedIssues" />
     </AssociationSet>
-    <AssociationSet Name="FK__SellerNot__NoteI__15DA3E5D" Association="Self.FK__SellerNot__NoteI__15DA3E5D">
-      <End Role="SellNotes" EntitySet="SellNotes" />
-      <End Role="SellerNotesAttachement" EntitySet="SellerNotesAttachement" />
-    </AssociationSet>
-    <AssociationSet Name="FK__SellerNot__NoteI__671F4F74" Association="Self.FK__SellerNot__NoteI__671F4F74">
+    <AssociationSet Name="FK__SellerNot__NoteI__2F9A1060" Association="Self.FK__SellerNot__NoteI__2F9A1060">
       <End Role="SellNotes" EntitySet="SellNotes" />
       <End Role="SellerNotesReview" EntitySet="SellerNotesReview" />
     </AssociationSet>
-    <AssociationSet Name="FK__SellerNot__NoteI__6AEFE058" Association="Self.FK__SellerNot__NoteI__6AEFE058">
+    <AssociationSet Name="FK__SellerNot__NoteI__3552E9B6" Association="Self.FK__SellerNot__NoteI__3552E9B6">
       <End Role="SellNotes" EntitySet="SellNotes" />
       <End Role="SellerNotesReportedIssues" EntitySet="SellerNotesReportedIssues" />
     </AssociationSet>
@@ -493,15 +427,11 @@
       <End Role="Registers" EntitySet="Registers" />
       <End Role="SellerNotesReview" EntitySet="SellerNotesReview" />
     </AssociationSet>
-    <AssociationSet Name="FK__SellNotes__Selle__681373AD" Association="Self.FK__SellNotes__Selle__681373AD">
+    <AssociationSet Name="FK__SellNotes__Selle__345EC57D" Association="Self.FK__SellNotes__Selle__345EC57D">
       <End Role="Registers" EntitySet="Registers" />
       <End Role="SellNotes" EntitySet="SellNotes" />
     </AssociationSet>
-    <AssociationSet Name="FK__Table__Seller_Id__1B9317B3" Association="Self.FK__Table__Seller_Id__1B9317B3">
-      <End Role="SellNotes" EntitySet="SellNotes" />
-      <End Role="Table" EntitySet="Table" />
-    </AssociationSet>
-    <AssociationSet Name="FK__UserProfi__User___7C1A6C5A" Association="Self.FK__UserProfi__User___7C1A6C5A">
+    <AssociationSet Name="FK__UserProfi__User___589C25F3" Association="Self.FK__UserProfi__User___589C25F3">
       <End Role="Registers" EntitySet="Registers" />
       <End Role="UserProfile" EntitySet="UserProfile" />
     </AssociationSet>

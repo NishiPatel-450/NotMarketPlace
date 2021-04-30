@@ -19,11 +19,9 @@ namespace EmailConfirm
         {
             this.BuyerRequests = new HashSet<BuyerRequest>();
             this.Downloads = new HashSet<Download>();
-            this.SellerNotesAttachements = new HashSet<SellerNotesAttachement>();
+            this.RejectedNotes = new HashSet<RejectedNote>();
             this.SellerNotesReportedIssues = new HashSet<SellerNotesReportedIssue>();
             this.SellerNotesReviews = new HashSet<SellerNotesReview>();
-            this.Tables = new HashSet<Table>();
-            this.RejectedNotes = new HashSet<RejectedNote>();
         }
     
         public int Id { get; set; }
@@ -31,6 +29,7 @@ namespace EmailConfirm
         public string title { get; set; }
         public string Category { get; set; }
         public byte[] Display_pic { get; set; }
+        public string FileName { get; set; }
         public byte[] Upload_note { get; set; }
         public string NoteType { get; set; }
         public Nullable<int> NumberofPages { get; set; }
@@ -40,10 +39,14 @@ namespace EmailConfirm
         public string Course { get; set; }
         public string Course_Code { get; set; }
         public string Professor_name { get; set; }
-        public bool IsPaid { get; set; }
+        public string IsPaid { get; set; }
         public Nullable<decimal> SellingPrice { get; set; }
         public string NotePrivew { get; set; }
         public string Status { get; set; }
+        public string CreatedBy { get; set; }
+        public Nullable<System.DateTime> CreatedDate { get; set; }
+        public string ModifiedBy { get; set; }
+        public Nullable<System.DateTime> ModifiedDate { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<BuyerRequest> BuyerRequests { get; set; }
@@ -51,14 +54,10 @@ namespace EmailConfirm
         public virtual ICollection<Download> Downloads { get; set; }
         public virtual Register Register { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<SellerNotesAttachement> SellerNotesAttachements { get; set; }
+        public virtual ICollection<RejectedNote> RejectedNotes { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<SellerNotesReportedIssue> SellerNotesReportedIssues { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<SellerNotesReview> SellerNotesReviews { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Table> Tables { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<RejectedNote> RejectedNotes { get; set; }
     }
 }

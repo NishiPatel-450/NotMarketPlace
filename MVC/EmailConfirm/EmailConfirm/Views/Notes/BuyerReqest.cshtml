@@ -12,16 +12,17 @@
                     <h3 class="row">Buyer Request</h3>
                 </div>
                 <div class="container col-md-7 col-sm-7 col-xs-12">
-                    <form role="form" class="row form1">
-                        <div class="col-md-10 col-sm-10 col-xs-8 form-group has-feedback has-feedback-left">
-                            <img src="img/search-icon.png" class="form-control-feedback">
-                            <input type="text" class="form-control" placeholder="Search" />
+                    @using (Html.BeginForm("BuyerReqest", "Notes", FormMethod.Get, new { @class = "form1 row" }))
+                    {
+                        <div class="col-md-10 col-sm-10 col-xs-8 searchinput">
+                            <img src="~/img/search-icon.png" class="form-control-feedback">
+                            <input type="text" class="form-control" placeholder="Search" name="searching"/>
                         </div>
                         <div class="col-md-2 col-sm-2 col-xs-2">
                             <button class="btn">SEARCH</button>
                         </div>
-                    </form>
-                </div>
+                    }
+                    </div>
             </div>
         </div>
 
@@ -41,21 +42,30 @@
                             <th>DOWNLOADED DATE/TIME</th>
                             <th></th>
                         </tr>
-                        @foreach (var item in Model)
+                        @if (Model.Count() == 0)
                         {
                             <tr>
-                                <td>@item.Id</td>
-                                <td class="titile-text">@item.Title</td>
-                                <td>@item.Category</td>
-                                <td>@item.BuyerId</td>
-                                <td>@item.PhoneNo</td>
-                                <td>Paid</td>
-                                <td>@item.Price</td>
-                                <td>@item.DownloadDateTime</td>
-                                <td><img src="~/img/eye.png">&nbsp;&nbsp;<img src="~/img/dots.png"></td>
+                                <td colspan="8" style="color:red;text-align:center">Data Not Found</td>
                             </tr>
                         }
-                    </table>
+                        else
+                        {
+                            foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>@item.Id</td>
+                                    <td class="titile-text">@item.Title</td>
+                                    <td>@item.Category</td>
+                                    <td>@item.BuyerId</td>
+                                    <td>@item.PhoneNo</td>
+                                    <td>Paid</td>
+                                    <td>@item.Price</td>
+                                    <td>@item.DownloadDateTime</td>
+                                    <td><img src="~/img/eye.png">&nbsp;&nbsp;<img src="~/img/dots.png"></td>
+                                </tr>
+                            }
+                        }
+                        </table>
         <div class="popup">
             <ul><li>Download</li></ul>
         </div>

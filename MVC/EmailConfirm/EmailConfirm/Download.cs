@@ -26,9 +26,6 @@ namespace EmailConfirm
         public string Seller { get; set; }
         public int Downloader { get; set; }
         public string BuyerEmailId { get; set; }
-        public Nullable<bool> IsSellerHasAllowedDownload { get; set; }
-        public string AttachmentPath { get; set; }
-        public Nullable<bool> IsAttachmentDownloaded { get; set; }
         public Nullable<System.DateTime> AttachmentDownloadedDate { get; set; }
         public bool IsPaid { get; set; }
         public Nullable<decimal> PurchasedPrice { get; set; }

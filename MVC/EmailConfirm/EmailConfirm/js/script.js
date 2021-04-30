@@ -1,4 +1,23 @@
+$(function () {
+        showHideNav();
+            $(window).scroll(function () {
+                showHideNav();
+            });
+            function showHideNav()
+            {
+                if ($(window).scrollTop()>=0) {
+                $("nav").addClass("white-nav-top");
+                            $(".navbar-brand img").attr("src", "~/img/logo.png");
+                            $("#back-to-top").fadeIn();
+                        }
+                        else {
+                $("nav").removeClass("white-nav-top");
+                            $(".navbar-brand img").attr("src", "~/img/top-logo.png");
+                            $("#back-to-top").fadeOut();
+                }
+            }
 
+        });
 /*Mobile menu*/
 $(function(){
     $("#mobile-nav-open-btn").click(function() {
@@ -39,4 +58,3 @@ $(".sold-table-list tr td").mousemove(function(e){
 }).mouseout(function(){
     $(".popup").hide();
 });
-

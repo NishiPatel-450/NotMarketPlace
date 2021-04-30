@@ -27,7 +27,7 @@ namespace EmailConfirm
         public string SecondaryEmail_Id { get; set; }
         public string Country_Code { get; set; }
         public string Phone_number { get; set; }
-        public string Profile_pic { get; set; }
+        public byte[] Profile_pic { get; set; }
         public string Address1 { get; set; }
         public string Address2 { get; set; }
         public string City { get; set; }

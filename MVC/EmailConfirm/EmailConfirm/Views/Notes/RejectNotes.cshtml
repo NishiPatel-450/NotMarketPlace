@@ -1,0 +1,66 @@
+﻿@model IEnumerable<EmailConfirm.Models.RejectNote>
+@{
+    ViewBag.Title = "RejectNotes"; 
+    Layout = "~/Views/Shared/css_js.cshtml";
+    Layout = "~/Views/Shared/Nav.cshtml";
+    WebGrid webGrid = new WebGrid(source: Model);
+}
+
+<section id="dashboard">
+    <div class="heading-bar container">
+        <div class="row">
+            <div class="col-md-7 col-sm-5 col-xs-12">
+                <h3 class="row">My Reject Notes</h3>
+            </div>
+            <div class="col-md-5 col-sm-6 col-xs-12">
+                @using (Html.BeginForm("RejectNotes", "Notes", FormMethod.Get, new { @class = "form1 row" }))
+                {
+                    <div class="col-md-9 col-sm-7 col-xs-7 form-group searchinput">
+                        <img src="~/img/search-icon.png" class="form-control-feedback">
+                        <input type="text" class="form-control" placeholder="Search" name="searching" />
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-xs-2">
+                        <button class="btn">SEARCH</button>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+
+    <div class="sold-table-list">
+        <div class="container">
+            <div class="row">
+                @if (Model.Count() == 0)
+                {
+                    <h4 style="color:red;text-align:center">Data Not Found</h4>
+                }
+                else
+                {
+                    @webGrid.GetHtml(
+                    htmlAttributes: new { @id = "WebGrid", @class = "Grid table sold-table-list" },
+                    columns: webGrid.Columns(webGrid.Column("id", "SR.NO"),
+                    webGrid.Column("title", "Note Title"),
+                    webGrid.Column("categoey", "Remark"),
+                    webGrid.Column("remark", "Remark"),
+                    webGrid.Column("", style: "Image",
+                              format: (item) => new HtmlString(" <ul class='nav navbar-nav'>" +
+                                         "<li class='dropdown'>" +
+                                             "<img src='/img/dots.png' id='noteslink'/>" +
+                                             "<ul>" +
+                                                 "<li class = 'link menulink'>" + @Html.ActionLink("Download Notes", "download", "Notes", new { id = item.title }, null) +
+                                                 "</li>" +
+                                             "</ul>" +
+                                         "</li>" +
+                                         "</ul>"
+                                 )
+                    )
+
+                    ))
+                }
+            </div>
+
+        </div>
+    </div>
+
+</section>
+

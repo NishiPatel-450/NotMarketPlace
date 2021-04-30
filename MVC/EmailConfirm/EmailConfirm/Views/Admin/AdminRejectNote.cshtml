@@ -1,4 +1,4 @@
-﻿@model IEnumerable<EmailConfirm.SellNote>
+﻿@model IEnumerable<EmailConfirm.Models.RejectNote>
 
 @{
     ViewBag.Title = "AdminPublishNote";
@@ -11,24 +11,23 @@
 <section id="dashboard">
     <div class="heading-bar container">
         <div class="row">
-            <div class="col-md-4 col-sm-4 col-xs-12">
-                <h3 class="row">Reject Notes</h3>
+            <div class="col-md-5 col-sm-4 col-xs-12">
+                <h2 class="row">Rejected Notes</h2>
             </div>
-            <div class="col-md-8 col-sm-6 col-xs-12">
-                <form role="form" class="row form1">
-                    <div class="col-md-6 col-sm-9 col-xs-7 form-group has-feedback has-feedback-left">
-                        <img src="Images/img/search-icon.png" class="form-control-feedback">
-                        <input type="search" class="form-control" placeholder="Search" />
+            <div class="col-md-7 col-sm-6 col-xs-12">
+                @using (Html.BeginForm("AdminRejectNote", "Admin", FormMethod.Get, new { @class = "form1 row" }))
+                {
+                    <div class="col-md-7 col-sm-7 col-xs-7 form-group searchinput">
+                        <img src="~/img/search-icon.png" class="form-control-feedback">
+                        <input type="search" class="form-control" placeholder="Search" name="searching" />
                     </div>
-                    <div class="col-md-3 col-sm-3 col-xs-2">
+                    <div class="col-md-2 col-sm-3 col-xs-2">
                         <button class="btn">SEARCH</button>
                     </div>
-                    <div class="col-md-3 col-sm-2 col-xs-12 text-right">
-                        <select class="form-select">
-                            <option>select month</option>
-                        </select>
+                    <div class="col-md-3 col-sm-2 col-xs-12">
+                        @Html.DropDownList("list", new SelectList(ViewBag.list, "Text", "Text", ViewBag.list), "select", new { onchange = "form.submit();", @class = "form-select" })
                     </div>
-                </form>
+                }
             </div>
         </div>
     </div>
@@ -47,20 +46,41 @@
                         <th>REMARK</th>
                         <th></th>
                     </tr>
-                    @foreach (var item in Model)
+                    @if (Model.Count() == 0)
                     {
                         <tr>
-                            <td>@item.Id</td>
-                            <td class="titile-text">@item.title</td>
-                            <td>@item.Category</td>
-                            <td>@item.Seller_Id</td>
-                            <td>09-10-2020,10:10</td>
-                            <td>Pritesh Panchal</td>
-                            <td>Lorem ipusm is dummy</td>
-                            <td><img src="~/img/dots.png"></td>
+                            <td colspan="10" style="color:red;text-align:center">Data Not Found</td>
                         </tr>
                     }
-                </table>
+                    else
+                    {
+                        foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@item.id</td>
+                                <td class="titile-text">@item.title</td>
+                                <td>@item.categoey</td>
+                                <td>@item.seller</td>
+                                <td>@item.dateadd</td>
+                                <td>@item.rejectedby</td>
+                                <td>@item.remark</td>
+                                <td>
+                                    <ul class="nav navbar-nav">
+                                        <li class="dropdown">
+                                            <a href="#"><img src="~/img/dots.png" /></a>
+                                            <ul>
+                                                <li>@Html.ActionLink("Approve", "ApproveNote", "Admin", new { @class = "link menulink", id = item.title }, null)</li>
+                                                <li>@Html.ActionLink("Download Notes", "AdminDownloadNote", "Admin", new { @class = "link menulink" })</li>
+                                                <li>@Html.ActionLink("View Details", "NoteDetails", "Notes", new { @class = "link menulink", id = item.title }, null)</li>
+                                                
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        }
+                    }
+                    </table>
 
             </div>
 

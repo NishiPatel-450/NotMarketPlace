@@ -5,6 +5,7 @@ using System.Net.Mail;
 using System.Web.Security;
 using System.Web.Mvc;
 using EmailConfirm.Models;
+using System.Web;
 
 namespace EmailConfirm.Controllers
 {
@@ -50,6 +51,8 @@ namespace EmailConfirm.Controllers
         [HttpPost]
         public ActionResult Register(Register model)
         {
+            if(ModelState.IsValid)
+            { 
             Guid Code = Guid.NewGuid();
             model.Code = "False";
             _context.Registers.Add(model);
@@ -79,6 +82,11 @@ namespace EmailConfirm.Controllers
             smtp.Send(mail);
             ViewBag.Message = "Mail Sent";
             return View("Login");
+            }
+            else
+            {
+                return View();
+            }
         }
 
         public ActionResult Activation(int id) {
@@ -93,14 +101,49 @@ namespace EmailConfirm.Controllers
             FormsAuthentication.SignOut();
             return RedirectToAction("Login");
         }
-
+        [Authorize]
         public ActionResult UserProfile()
         {
-            return View();
+            var res = _context.UserProfiles.Where(x => x.User_email == User.Identity.Name).FirstOrDefault();
+            if (res != null)
+            {
+                return RedirectToAction("UpdateProfile");
+            }
+            else { 
+                return View();
+            }
+        }
+        [Authorize]
+        public ActionResult UpdateProfile()
+        {
+            var res = _context.UserProfiles.Where(x => x.User_email == User.Identity.Name).FirstOrDefault();
+            return View(res);
+           
         }
         [HttpPost]
-        public ActionResult UserProfile(UserProfile model1)
+        public ActionResult UpdateProfile(UserProfile model)
         {
+            if (ModelState.IsValid)
+            {
+                _context.Entry(model).State = System.Data.Entity.EntityState.Modified;
+                _context.SaveChanges();
+                return RedirectToAction("Index","Home");
+            }
+            else
+            {
+                return View();
+            }
+        }
+
+        [HttpPost]
+        public ActionResult UserProfile(UserProfile model1, HttpPostedFileBase imgfile)
+        {
+            var res = _context.UserProfiles.ToList();
+            if (imgfile != null)
+            {
+                model1.Profile_pic = new byte[imgfile.ContentLength];
+                imgfile.InputStream.Read(model1.Profile_pic, 0, imgfile.ContentLength);
+            }
             var name = User.Identity.Name;
             model1.User_Id = 1020;
             var currenttime = DateTime.UtcNow;
@@ -121,6 +164,8 @@ namespace EmailConfirm.Controllers
         [HttpPost]
         public ActionResult ForgotPassword(RegDetail model)
         {
+            if(ModelState.IsValid)
+            { 
             MailMessage mail = new MailMessage();
             mail.From = new MailAddress("nishivpatel40@gmail.com");
             mail.To.Add(model.EmailId);
@@ -140,6 +185,31 @@ namespace EmailConfirm.Controllers
             smtp.Send(mail);
             TempData["testmsg"] = " Requested Successfully ";
             return View("Login");
+            }
+            else
+            {
+                return View();
+            }
+        }
+        public ActionResult ChangePassword()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult ChangePassword(ChangePassword model)
+        {
+            if (ModelState.IsValid)
+                {
+                    var result = _context.Registers.Where(x => x.EmailId == User.Identity.Name).FirstOrDefault();
+                    result.Password = model.NewPassword;
+                    _context.Entry(result).State = System.Data.Entity.EntityState.Modified;
+                    _context.SaveChanges();
+                    return View("Login");
+                }
+                else { 
+                    return View();
+                }
+            
         }
     }
 }

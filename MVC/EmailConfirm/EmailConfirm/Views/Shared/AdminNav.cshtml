@@ -73,39 +73,37 @@
 
     <!--Header-->
     <header>
-        <nav class="navbar navbar-fixed-top white-nav-top">
+        <nav class="navbar navbar-fixed-top">
             <div class="container">
-                <div class="site-nav-wrapper row">
-                    <div class="navbar-header row col-md-6 col-sm-6">
-                        <!--Logo
-                        <a href="index.cshtml" class="navbar-brand col-xs-9">
-                            <img src="~/img/logo.png" alt="logo">
-                        </a>-->
+                <div class="site-nav-wrapper">
+
+                    <div class="navbar-header">
+
+                        <!--Mobile menu Open Button-->
+                        <span id="mobile-nav-open-btn">&#9776;</span>
+
                         <a href="@Url.Action("Index", "Home")" class="link col-xs-9">
                             <img alt="Logo" src="~/img/logo.png" style="margin-top:8%;">
                         </a>
-                        <!--Mobile menu Open Button-->
-                        <span id="mobile-nav-open-btn" class="col-xs-2">&#9776;</span>
                     </div>
                     <!--Main Menu-->
-                    <div class="collapse navbar-collapse col-md-6 col-sm-12">
-                        <ul class="nav navbar-nav">
-                            <li>
-                                
-                                <ul class="nav navbar-nav navbar-right">
+                    <div class="container">
+                        <div class="collapse navbar-collapse">
+                            <ul class="nav navbar-nav navbar-right">
                                     <li>@Html.ActionLink("Dashboard", "Dashboard", "Admin", routeValues: null, htmlAttributes: new { id = "contactlink" })</li>
-                                    <li class="dropdown">@Html.ActionLink("Notes", "", "Notes", routeValues: null, htmlAttributes: new { id = "noteslink" })
-                                    
+                                    <li class="dropdown">
+                                        @Html.ActionLink("Notes", "", "Notes", routeValues: null, htmlAttributes: new { id = "noteslink" })
+
                                         <ul>
                                             <li>@Html.ActionLink("Notes Under Review", "NoteUnderReview", "Admin", routeValues: null, htmlAttributes: new { @class = "link menulink" })</li>
                                             <li>@Html.ActionLink("Published Notes", "AdminPublishNote", "Admin", routeValues: null, htmlAttributes: new { @class = "link menulink" })</li>
                                             <li>@Html.ActionLink("Download Notes", "AdminDownloadNote", "Admin", routeValues: null, htmlAttributes: new { @class = "link menulink" })</li>
                                             <li>@Html.ActionLink("Rejected Notes", "AdminRejectNote", "Admin", routeValues: null, htmlAttributes: new { @class = "link menulink" })</li>
-                                            
+
                                         </ul>
+
                                     </li>
-</li>
-                                    <li>@Html.ActionLink("Member", "", "Home", routeValues: null, htmlAttributes: new { id = "faqlink" })</li>
+                                    <li>@Html.ActionLink("Member", "Members", "Admin", routeValues: null, htmlAttributes: new { id = "faqlink" })</li>
                                     <li>@Html.ActionLink("Reports", "", "Home", routeValues: null, htmlAttributes: new { id = "contactlink" })</li>
                                     <li>@Html.ActionLink("Settings", "", "Home", routeValues: null, htmlAttributes: new { id = "contactlink" })</li>
                                     @if (User.Identity.IsAuthenticated)
@@ -122,38 +120,43 @@
                                                 </li>
                                             </ul>
                                         </li>
-                                        <li>@Html.ActionLink("Logout", "Logout", "RegisterUser", routeValues: null, htmlAttributes: new { id = "logoutlink", @class = "btn" });</li>
+                                        <li>
+                                            <div id="home-btn">
+                                                <a class="btn" href=@Url.Action("Logout", "RegisterUser") title="Login" role="button">Logout</a>
+                                            </div>
+                                        </li>
                                     }
                                     else
                                     {
-                                        <li>@Html.ActionLink("Log in", "Login", "RegisterUser", routeValues: null, htmlAttributes: new { id = "loginLink", @class = "btn" })</li>
+                                        <li>
+                                            <div id="home-btn">
+                                                <a class="btn" href=@Url.Action("Login", "RegisterUser") title="Login" role="button">Login</a>
+                                            </div>
+                                        </li>
                                     }
                                 </ul>
 
-
-                            </li>
-                        </ul>
-                    </div>
-
-                    <!--Mobile menu-->
-                    <div id="mobile-nav">
-                        <div class="row">
-                            <a href="index.html" class="col-xs-9" style="margin-top: 5%;">
-                                <img src="~/img/logo.png" alt="logo">
-                            </a>
-                            <span id="mobile-nav-close-btn" class="col-xs-2">&times;</span>
-                        </div>
-                        <div id="mobile-nav-content">
-                            <ul class="nav1 text-left">
-                                <li>
-                                    @Html.Partial("_LoginPartial")
-                                </li>
-                            </ul>
                         </div>
                     </div>
+                        <!--Mobile menu-->
+                        <div id="mobile-nav">
+                            <div class="row">
+                                <a href="index.html" class="col-xs-9" style="margin-top: 5%;">
+                                    <img src="~/img/logo.png" alt="logo">
+                                </a>
+                                <span id="mobile-nav-close-btn" class="col-xs-2">&times;</span>
+                            </div>
+                            <div id="mobile-nav-content">
+                                <ul class="nav1 text-left">
+                                    <li>
+                                        @Html.Partial("_LoginPartial")
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
 
+                    </div>
                 </div>
-            </div>
         </nav>
     </header>
 

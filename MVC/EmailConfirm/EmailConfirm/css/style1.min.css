@@ -1,0 +1,1141 @@
+/*Html,Body*/
+html,
+body {
+    height: 100%;
+}
+
+body {
+    color: #212226;
+}
+
+.navbar .site-nav-wrapper .nav {
+    float: right;
+}
+
+.navbar-nav {
+    padding: 10px 0px 10px 0px;
+}
+
+.site-nav-wrapper {
+    -webkit-transition: all 300ms linear;
+    transition: all 300ms linear;
+}
+
+.navbar-brand {
+    padding: 15px 3px 40px 1px;
+}
+
+header li a {
+    font-family: "Open Sans";
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 20px;
+    color: #fff;
+}
+
+header li .btn {
+    font-family: "Open Sans";
+    width: 90px;
+    height: 30px;
+    border-radius: 3px;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 22px;
+    color: #6255a5;
+    background-color: #fff;
+    margin-top: 10%;
+    padding: 1%;
+}
+
+ul.navbar-nav > li > a:hover,
+ul.navbar-nav > li > a:focus {
+    background: none;
+    color: #fff;
+    border-bottom: 3px solid #6255a5;
+}
+
+.white-nav-top {
+    background: #fff;
+    padding: 15px 0;
+    position: fixed;
+    -webkit-box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.1);
+}
+
+    .white-nav-top ul.navbar-nav > li > a {
+        color: #212226;
+    }
+
+    .white-nav-top ul.navbar-nav > li .btn {
+        color: #fff;
+        background-color: #6255a5;
+        font-weight: 500;
+    }
+
+    .white-nav-top ul.navbar-nav > li > a:hover,
+    .white-nav-top ul.navbar-nav > li > a:focus {
+        border-bottom: 3px solid #6255a5;
+        background-color: #fff;
+        color: #6255a5;
+    }
+
+
+/*Mobile Menu*/
+.navbar-header {
+    height: 20%;
+}
+
+#mobile-nav-open-btn {
+    font-size: 30px;
+    color: #f4c613;
+    cursor: pointer;
+    z-index: 2;
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: none;
+}
+
+#mobile-nav {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    background-color: rgba(255, 255, 255, 1);
+    transition: all 300ms linear;
+    overflow-y: hidden;
+}
+
+#mobile-nav-close-btn {
+    font-family: "Raleway", sans-serif;
+    font-size: 70px;
+    color: #212226;
+    cursor: pointer;
+    position: absolute;
+    top: -9px;
+    right: 13px;
+    -webkit-transition: .3s;
+    transition: .3s;
+}
+
+#mobile-nav-content {
+    width: 100%;
+    margin-top: 30px;
+    position: relative;
+    top: 10%;
+}
+
+#mobile-nav ul li {
+    margin-bottom: 20px;
+}
+
+#mobile-nav a {
+    font-family: "Ralewaay", sans-serif;
+    font-size: 18px;
+    color: #212226;
+    font-weight: 400;
+    text-transform: uppercase;
+    display: inline;
+    -webkit-transition: .3s;
+    transition: .3s;
+}
+
+#mobile-nav .btn {
+    background-color: #6255a5;
+    color: #fff;
+}
+
+#mobile-nav a:hover,
+#mobile-nav a:focus,
+#mobile-nav-close-btn:hover,
+#mobile-nav-close-btn:focus {
+    color: #f4c613;
+    background: none;
+}
+
+.white-nav-top #mobile-nav ul.nav > li.active > a {
+    color: #f4c613;
+    font-weight: 500;
+}
+
+/*Home*/
+
+#home-heading h1 {
+    color: #fff;
+    font-family: "Open Sans";
+    font-size: 50px;
+    font-weight: 700;
+    line-height: 54px;
+}
+
+#home-text p {
+    font-family: "Open Sans";
+    color: #fff;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 30px;
+}
+
+.bg-img {
+    background: url("../img/banner-with-overlay.jpg") no-repeat;
+    background-size: cover;
+    height: 620px;
+    width: 102%;
+}
+
+#home-content {
+    width: 100%;
+    height: 100%;
+    display: table;
+}
+
+#home-content-inner {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.btn-home {
+    color: #fff;
+    width: 172px;
+    height: 30px;
+    border: 1px solid white;
+    border-radius: 3px;
+    font-family: "Open Sans";
+    font-style: 600;
+    font-size: 18px;
+    line-height: 22px;
+    padding-bottom: 30px;
+    padding-top: 10px;
+}
+
+    .btn-home:focus,
+    .btn-home:hover {
+        color: white;
+    }
+
+h1 {
+    font-family: "Open Sans";
+    font-size: 34px;
+    font-weight: 600;
+    line-height: 38px;
+    color: #6255a5;
+}
+
+#about p {
+    font-family: "Open Sans";
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 22px;
+    color: #333333;
+}
+
+.about-right .p2 {
+    margin-top: 50px;
+    margin-bottom: 60px;
+}
+
+#about {
+    margin-top: 60px;
+}
+
+#about-02 h1 {
+    margin-bottom: 30px;
+    margin-top: 60px;
+}
+
+#about-02 {
+    background-color: #f4f4f4;
+}
+
+    #about-02 .img1 {
+        background-color: #fff;
+        height: 140px;
+        width: 140px;
+        border-radius: 50%;
+        -webkit-box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.08);
+        box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.08);
+        margin-left: 37%;
+    }
+
+.img1 img {
+    margin-top: 30%;
+}
+
+#about-02 h3 {
+    color: #6255a5;
+    font-family: "Open Sans";
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 28px;
+}
+
+#about-02 .btn {
+    width: 172px;
+    height: 40px;
+    border-radius: 3px;
+    font-family: "Open Sans";
+    font-style: 600;
+    font-size: 18px;
+    color: #fff;
+    background-color: #6255a5;
+    margin-top: 10px;
+}
+
+.about-items {
+    margin-bottom: 60px;
+}
+
+#testimonials {
+    margin: 60px;
+}
+
+
+.testimonial-item {
+    background-color: #fff;
+    padding: 40px;
+    margin-top: 30px;
+    height: 290px;
+    border-radius: 3px;
+    -webkit-box-shadow: 0 0 30px 0px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 0 30px 0px rgba(0, 0, 0, 0.08);
+}
+
+    .testimonial-item h3 {
+        color: #6255a5;
+        font-family: "Open Sans";
+        font-size: 24px;
+        font-weight: 600;
+        line-height: 36px;
+        margin-left: 20px;
+    }
+
+    .testimonial-item h6 {
+        color: #333333;
+        font-family: "Open Sans";
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 30px;
+        margin-left: 20px;
+    }
+
+    .testimonial-item p {
+        color: #333333;
+        font-family: "Open Sans";
+        font-size: 18px;
+        font-style: italic;
+        font-weight: 400;
+        line-height: 28px;
+        margin-top: 30px;
+    }
+
+    .testimonial-item img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+    }
+
+.testimonial-item-2 {
+    margin-left: 30px;
+}
+
+/* FAQ Page Css */
+#faq-home {
+    height: 250px;
+    border: 1px solid;
+    background-image: url("../img/banner-with-overlay.jpg");
+    background-size: cover;
+}
+
+    #faq-home .home-content {
+        height: 250px;
+        margin-top: 50px;
+        width: 100%;
+        display: table;
+    }
+
+    #faq-home .home-content-inner {
+        display: table-cell;
+        vertical-align: middle;
+        text-align: center;
+    }
+
+    #faq-home h1 {
+        font-family: "Open Sans";
+        color: #fff;
+        font-size: 40px;
+        font-weight: 600;
+    }
+
+#gen-questions h1,
+#uploaders h1,
+#downloaders h1 {
+    margin-top: 60px;
+    margin-bottom: 15px;
+}
+
+.panel-title > a:before {
+    float: right !important;
+    font-family: FontAwesome;
+    content: "\f068";
+    padding-right: 5px;
+    color: #a6a6a6;
+    width: 16px;
+    height: 2px;
+}
+
+.panel-title > a.collapsed:before {
+    float: right !important;
+    content: "\f067";
+    color: #a6a6a6;
+    width: 16px;
+    height: 2px;
+}
+
+.panel-title > a:hover,
+.panel-title > a:active,
+.panel-title > a:focus {
+    text-decoration: none;
+}
+
+.panel {
+    background-color: #f3f3f3;
+    padding: 1%;
+}
+
+.panel-text {
+    margin-top: 20px;
+    font-family: Open Sans;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 22px;
+    color: #333333;
+}
+
+.panel:hover,
+.panel:active {
+    background-color: #fff;
+    border: 1px solid #d1d1d1;
+}
+
+.panel h4 {
+    font-family: Open Sans;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 22px;
+    color: #333333;
+}
+
+#search-notes h3,
+#total-notes h3 {
+    margin-top: 60px;
+    margin-bottom: 20px;
+    font-family: Open Sans;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 28px;
+    color: #6255a5;
+}
+
+.search-notes-form {
+    background-color: #f9f9f9;
+    padding: 30px;
+}
+
+.has-feedback-left .form-control {
+    padding-right: 12px;
+    padding-left: 34px;
+    border: 1px solid #d1d1d1;
+    height: 50px;
+    border-radius: 3px;
+    display: table;
+    margin-bottom: 20px;
+    font-family: Open Sans;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+    color: black;
+}
+
+.has-feedback-left .form-control-feedback {
+    display: table-cell;
+    vertical-align: middle;
+    left: 20;
+    height: 20px;
+    width: 20px;
+    top: 15;
+}
+
+.form-select {
+    border: 1px solid #d1d1d1;
+    height: 50px;
+    width: 160px;
+    border-radius: 3px;
+    font-family: Open Sans;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+    color: #8a8a8a;
+    padding: 1px;
+    margin-bottom: 10px;
+}
+
+.notes {
+    margin-top: 30px;
+}
+
+    .notes .card {
+        border: 1px solid #d1d1d1;
+        width: 365px;
+        margin-bottom: 20px;
+        border-radius: 5px;
+        margin-left: 1%;
+    }
+
+
+        .notes .card img {
+            border: 1px solid #d1d1d1;
+            height: 250px;
+            width: 365px;
+        }
+
+.card-body {
+    margin-top: 1px;
+}
+
+    .card-body h4 a {
+        font-family: Open Sans;
+        font-size: 20px;
+        font-weight: 600;
+        line-height: 26px;
+        color: #6255a5;
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+
+.notes .body-icons img {
+    height: 20px;
+    width: 20px;
+    border: 0px;
+    margin-left: 15px;
+    margin-bottom: 10px;
+}
+
+.card .body-text {
+    font-family: Open Sans;
+    font-size: 16x;
+    font-weight: 400;
+    line-height: 20px;
+    color: #333333;
+}
+
+.flag-text {
+    color: #df3434;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.rate {
+    float: left;
+    height: 46px;
+    padding: 0 10px;
+}
+
+    .rate:not(:checked) > input {
+        position: absolute;
+        top: -9999px;
+    }
+
+    .rate:not(:checked) > label {
+        float: right;
+        width: 1em;
+        overflow: hidden;
+        white-space: nowrap;
+        cursor: pointer;
+        font-size: 30px;
+        color: #ccc;
+    }
+
+        .rate:not(:checked) > label:before {
+            content: '★ ';
+        }
+
+    .rate > input:checked ~ label {
+        color: #ffc700;
+    }
+
+    .rate:not(:checked) > label:hover,
+    .rate:not(:checked) > label:hover ~ label {
+        color: #deb217;
+    }
+
+    .rate > input:checked + label:hover,
+    .rate > input:checked + label:hover ~ label,
+    .rate > input:checked ~ label:hover,
+    .rate > input:checked ~ label:hover ~ label,
+    .rate > label:hover ~ input:checked ~ label {
+        color: #c59b08;
+    }
+
+.ratings .text {
+    font-family: Open Sans;
+    font-size: 16x;
+    font-weight: 400;
+    line-height: 20px;
+    color: #333333;
+    margin-top: 13px;
+}
+
+.pagination {
+    margin-left: 35%;
+    margin-top: 50px;
+}
+
+    .pagination .page-link {
+        border: 0px;
+        font-family: Open Sans;
+        font-size: 16x;
+        font-weight: 400;
+        line-height: 20px;
+        color: #333333;
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+
+    .pagination .page-link-img {
+        border: 0px;
+        color: #333333;
+        background-color: #fff;
+    }
+
+    .pagination .page-link:hover {
+        height: 34px;
+        width: 34px;
+        font-family: Open Sans;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 20px;
+        border-radius: 50%;
+        background-color: #6255a5;
+        color: #fff;
+    }
+
+/*------Contect US----------*/
+#contect-us {
+    margin-top: 60px;
+}
+
+h2 {
+    color: #6255a5;
+    font-family: Open Sans;
+    font-weight: 600;
+    font-size: 34px;
+    line-height: 38px;
+}
+
+#contect-us p,
+.login-content p,
+.contactform label {
+    color: #333333;
+    font-family: Open Sans;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+}
+
+.contactform label {
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+.contactform .form-control {
+    color: #000;
+    font-family: Open Sans;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+}
+
+.contactform .comment-area {
+    border: 1px solid #d1d1d1;
+    border-radius: 3px;
+    height: 220px;
+    text-align: start;
+}
+
+.contactform .btn {
+    margin-bottom: 40px;
+    margin-top: 20px;
+    font-family: Open Sans;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    border-radius: 3px;
+    background-color: #6255a5;
+    color: #fff;
+}
+
+/*----Notes details----*/
+#notes-details,
+#dashboard {
+    margin-top: 10%;
+}
+
+#dashboard1 {
+    margin-top: 7%;
+}
+
+#notes-details h3,
+.card h3,
+.admmin-card button h3 {
+    margin-bottom: 30px;
+    font-family: "Open Sans";
+    font-size: 26px;
+    font-weight: 600;
+    color: #6255a5;
+}
+
+.note-brief h6,
+.login-content h3 {
+    font-family: "Open Sans";
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 30px;
+    color: #6255a5;
+}
+
+.note-brief p,
+.note-detail-title p,
+.review-content p {
+    font-family: "Open Sans";
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+    color: #333333;
+}
+
+.note-img img {
+    height: 250px;
+    width: 180px;
+}
+
+.note-brief .btn,
+.heading-bar .btn {
+    margin-bottom: 40px;
+    font-family: Open Sans;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    border-radius: 3px;
+    background-color: #6255a5;
+    color: #fff;
+    height: 50px;
+}
+
+.note-details .note-detail-text p {
+    font-family: Open Sans;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 19px;
+    color: #6255a5;
+    text-align-last: right;
+}
+
+.note-pdf,
+.reviews {
+    height: 500px;
+}
+
+.reviews {
+    padding: 5%;
+    border: 1px solid #d1d1d1;
+    border-radius: 3px;
+}
+
+    .reviews .reviewer-img {
+        margin-top: 2%;
+        margin-right: 10px;
+    }
+
+.review-content {
+    margin-left: 10px;
+}
+
+    .review-content h5 {
+        font-family: Open Sans;
+        font-weight: 600;
+        font-size: 20px;
+        color: #333333;
+    }
+
+    .review-content .ratings {
+        margin-top: -15px;
+    }
+
+/*---Sell Notes---*/
+.card-01 {
+    border: 1px solid #d1d1d1;
+    height: 120px;
+    width: 217px;
+    -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.01);
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.01);
+}
+
+.card-03 {
+    border: 1px solid #d1d1d1;
+    height: 120px;
+    width: 317px;
+    -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.01);
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.01);
+}
+
+.card-02 {
+    border: 1px solid #d1d1d1;
+    height: 120px;
+    width: 150px;
+    margin-left: 30px;
+    -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.01);
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.01);
+}
+
+    .card-01 h3,
+    .card-02 h3,
+    .card-03 h3 {
+        margin-top: 20%;
+        margin-bottom: 10%;
+    }
+
+.card-01 img {
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.card-01 .earning {
+    margin-top: 10px;
+    margin-left: 20px;
+}
+
+.admin-card p,
+.card-03 p,
+.card-02 p {
+    font-family: Open Sans;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 22px;
+    color: #333333;
+}
+
+#progress-notes {
+    margin-top: 60px;
+}
+
+.heading-bar h3 {
+    font-family: Open Sans;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 28px;
+    color: #6255a5;
+}
+
+#progress-notes form {
+    margin-left: 23%;
+}
+
+    #progress-notes form img {
+        margin-left: 7%;
+    }
+
+#progress-notes input {
+    width: 322px;
+}
+
+#progress-notes .btn {
+    height: 50px;
+    margin-left: 96%;
+    margin-top: 0px;
+}
+
+.table {
+    border: 1px solid #d1d1d1;
+    border-radius: 3px;
+}
+
+.progress-table table tr {
+    height: 60px;
+    font-family: Open Sans;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    color: #333333;
+}
+
+    .progress-table table tr:hover {
+        -webkit-box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1);
+        box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1);
+    }
+
+/*---Login----*/
+.login,
+.signup, .forgot-password, .email-verify {
+    width: 100%;
+    height: 100%;
+    background: url("../img/login.jpg") no-repeat;
+    background-size: auto;
+    display: table;
+}
+
+    .login .login-form {
+        margin-top: 30px;
+        background-color: #fff;
+        padding: 30px 50px 50px 50px;
+        border-radius: 3px;
+    }
+
+.field-icon {
+    float: right;
+    margin-top: -25px;
+    position: relative;
+    z-index: 2;
+}
+
+.login-content {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.login-form a {
+    color: #6255a5;
+    font-family: Open Sans;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+}
+
+.login-form .chkbx {
+    margin-left: 3px;
+    border-radius: 3px;
+}
+
+.signup .login-form {
+    background-color: #fff;
+    padding: 30px 50px 0px 50px;
+    border-radius: 3px;
+    margin-top: 25px;
+    margin-bottom: 00px;
+}
+
+.signup .success-text {
+    color: forestgreen;
+    margin-top: 5%;
+}
+
+.forgot-password .login-form {
+    background-color: #fff;
+    padding: 30px 50px 50px 50px;
+    border-radius: 3px;
+    margin-top: 25px;
+}
+
+.email-verify .login-form {
+    background-color: #fff;
+    border-radius: 3px;
+    padding: 30px;
+}
+
+.email-verify h3 {
+    margin-top: 30px;
+}
+
+.email-verify h4 {
+    margin-top: 30px;
+    color: #333333;
+    font-family: Open Sans;
+    font-weight: 600;
+    font-size: 24px;
+}
+
+.email-verify p {
+    margin-top: 30px;
+    color: #333333;
+    font-family: Open Sans;
+    font-weight: 400;
+    font-size: 18px;
+}
+
+.email-verify .btn {
+    margin-top: 20px;
+    background-color: #6255a5;
+    color: #fff;
+    font-family: Open Sans;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+}
+
+.details-form {
+    position: relative;
+    top: -40;
+}
+
+#add-note #notes-details {
+    margin-top: 0px;
+}
+
+.details {
+    margin-top: 90px;
+}
+
+.details-form .btn {
+    margin-right: 10px;
+    height: 50px;
+}
+
+.details-form input,
+.details-form select {
+    height: 50px;
+}
+
+.details-form .desc {
+    height: 150px;
+}
+
+#disp-file input {
+    height: 100px;
+}
+
+#disp-file {
+    margin-bottom: 0px;
+}
+
+.upload-img {
+    float: left;
+    margin-left: 230px;
+    margin-top: -80px;
+    position: relative;
+    z-index: 1;
+}
+
+    .upload-img img {
+        margin-left: 10px;
+    }
+
+#note-pre input {
+    height: 130px;
+}
+
+.rd1 {
+    width: 20px;
+    position: absolute;
+    top: -10;
+}
+
+.rd-text {
+    margin-left: 30px;
+    position: absolute;
+    top: -20;
+}
+
+.sold-table-list tr {
+    height: 70px;
+}
+
+.sold-table-list td {
+    color: #333333;
+    font-family: Open Sans;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+}
+
+.sold-table-list .titile-text {
+    color: #6255a5;
+}
+
+.sold-table-list tr:hover {
+    -webkit-box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.15);
+    box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.15)
+}
+
+.admin-card button {
+    border: 1px solid #d1d1d1;
+    border-radius: 3px;
+    left: -13;
+}
+
+.review-action .btn1 {
+    height: 40px;
+    width: 100px;
+    border-radius: 3px;
+    margin: 5px;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.user-icon-list .collapse ul {
+    -webkit-box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.15);
+    box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.15);
+    list-style-type: none;
+    padding: 10px;
+}
+
+.user-icon-list .collapse li > a {
+    color: #333333;
+    font-family: "Open Sans";
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 28px;
+    margin-top: 10px;
+    text-decoration: none;
+}
+
+    .user-icon-list .collapse li:hover,
+    .user-icon-list .collapse li > a:hover {
+        background-color: #6255a5;
+        color: #fff;
+    }
+
+/*---Footer---*/
+#footer {
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+
+    #footer .row p {
+        text-align: start;
+        margin-top: 1%;
+        color: #333333;
+        font-family: "Open Sans";
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 28px;
+    }
+
+ul.social-list li {
+    display: inline-block;
+    padding: 0;
+}
+
+    ul.social-list li a {
+        border: 1px solid #6255a5;
+        text-align: center;
+        width: 35px;
+        background-color: #6255a5;
+        height: 35px;
+        display: inline-block;
+        line-height: 35px;
+        color: #fff;
+        border-radius: 50%;
+        -webkit-transition: all 400ms linear;
+        transition: all 400ms linear;
+    }
+
+        ul.social-list li a img {
+            height: 14px;
+            margin-bottom: 6px;
+        }

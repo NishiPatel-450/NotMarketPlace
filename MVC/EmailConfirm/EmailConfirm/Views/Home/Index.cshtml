@@ -1,4 +1,5 @@
-﻿@{
+﻿
+@{
     Layout = null;
 }
 
@@ -6,62 +7,60 @@
 <html lang="en">
 
 <head>
+
     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
 
-    <title>Notes Marketplace</title>
-    <link rel="stylesheet" href="~/css/Bootstrap/bootstrap.min.css">
-
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <title>Note Marketplace</title>
 
     <link rel="shortcut icon" href="~/img/favicon.ico">
 
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="~/css/font-awesome/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="~/css/Bootstrap/bootstrap.min.css">
 
     <link rel="stylesheet" href="~/css/style.min.css">
 
-    <link rel="stylesheet" href="~/css/responsive.css">
+    <link rel="stylesheet" href="~/css/responsive.min.css">
 
 </head>
 
-<body>
+<body data-spy="scroll" data-target=".navbar" data-offset="65">
 
     <!--Header-->
     <header>
         <nav class="navbar navbar-fixed-top">
             <div class="container">
-                <div class="site-nav-wrapper row">
-                    <div class="navbar-header row col-md-6 col-sm-6">
-                        <!--Logo-->
-                        <a href="@Url.Action("Index", "Home")" class="link col-xs-9">
-                            <img alt="Logo" src="~/img/top-logo.png" style="margin-top:8%;">
-                        </a>
-                       
+                <div class="site-nav-wrapper">
+
+                    <div class="navbar-header">
+
                         <!--Mobile menu Open Button-->
-                        <span id="mobile-nav-open-btn" class="col-xs-2">&#9776;</span>
+                        <span id="mobile-nav-open-btn">&#9776;</span>
+
+                        <!--Logo-->
+                        <a href=@Url.Action("Index","Home") class="navbar-brand col-xs-9">
+                            <img src="~/img/top-logo.png" alt="logo">
+                        </a>
                     </div>
+
                     <!--Main Menu-->
-                    <div class="collapse navbar-collapse col-md-6 col-sm-12">
-                        <ul class="nav navbar-nav">
-                            <li>
-                                @Html.Partial("_LoginPartial")
-                            </li>
-                        </ul>
+                    <div class="container">
+                        <div class="collapse navbar-collapse">
+                            @Html.Partial("_LoginPartial")
+                        </div>
                     </div>
 
                     <!--Mobile menu-->
                     <div id="mobile-nav">
-                        <div class="row">
-                            <a href="index.html" class="col-xs-9" style="margin-top: 5%;">
-                                <img src="~/img/logo.png" alt="logo">
-                            </a>
-                            <span id="mobile-nav-close-btn" class="col-xs-2">&times;</span>
-                        </div>
+                        <span id="mobile-nav-close-btn">&times;</span>
                         <div id="mobile-nav-content">
-                            <ul class="nav1 text-left">
-                                @Html.Partial("_LoginPartial")
-
-                            </ul>
+                            @Html.Partial("_LoginPartial")
                         </div>
                     </div>
 
@@ -70,23 +69,21 @@
         </nav>
     </header>
 
-    <!--Home Page-->
+    <!--Home-->
     <section id="home">
-        <!--Home Content-->
-        <div class="bg-img">
+        <div id="home-bg-video">
+
             <div id="home-content">
                 <div id="home-content-inner">
                     <div class="container">
-                        <div id="home-heading">
-                            <h1 id="home-heading-1">Download Free/Paid Notes<br>or Sales your Book</h1>
+                        <div id="home-heading" class="col-md-6 col-sm-8 col-xs-12">
+                            <h1 id="home-heading-1">Download Free/Paid Notes or Sales your Book</h1>
                         </div>
-                        <div id="home-text">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque itaque soluta eveniet optio quos rerum nostrum ipsa.</p>
+                        <div id="home-text" class="col-md-7 col-sm-8 col-xs-12">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque itaque <br>soluta eveniet optio quos rerum nostrum ipsa.</p>
                         </div>
-                        <div id="home-btn">
-                            <a href="Home/FAQPage.cshtml" title="Learn More" role="button">
-                                @Html.ActionLink("LEARN MORE", "FAQPage", "Home", routeValues: null, htmlAttributes: new { id = "faqlink", @class = "btn btn-general btn-home" })
-                            </a>
+                        <div id="home-btn" class="col-md-7 col-sm-8 col-xs-12">
+                            <a class="btn btn-home" href=@Url.Action("FAQPage","Home") title="Learn More" role="button">LEARN MORE</a>
                         </div>
                     </div>
                 </div>
@@ -96,21 +93,21 @@
 
     <!--About-->
     <section id="about">
-        <div class="about-01 content-box-lg">
+        <!--About 01-->
+        <div id="about-01">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-4">
+                    <div class="col-md-4 col-sm-12 col-xs-12">
                         <div id="about-left">
                             <div class="horizontal-heading">
-                                <h1>About <br>NotesMarketPlace</h1>
+                                <h2>About <br>NotesMarketPlace</h2>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-8">
-                        <div class="about-right">
-                            <p class="p1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem facilis ipsa ullam ducimus laborum accusamus odio dicta at, pariatur optio voluptatum, sequi accusantium dolore saepe quis reiciendis! Ipsam, aliquid, minima.</p>
-
-                            <p class="p2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus reiciendis necessitatibus eius cum esse, voluptas repellendus laborum non quae, cupiditate, impedit aut nesciunt provident et repudiandae odio suscipit ab, est!</p>
+                    <div class="col-md-8 col-sm-12 col-xs-12">
+                        <div id="about-right">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat dolore illo, aliquam saepe quibusdam voluptatibus aspernatur recusandae similique itaque iusto! Voluptatum aliquam debitis dolore quae optio excepturi deleniti officia veniam.</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. In est velit molestias itaque facilis minima saepe omnis nostrum, fuga, architecto dolore temporibus aut illo id quaerat voluptas quia, sapiente nobis.</p>
                         </div>
                     </div>
                 </div>
@@ -128,25 +125,33 @@
                 <div class="row about-items">
                     <div class="col-md-6 col-sm-6 col-xs-12">
                         <div class="about-item text-center">
-                            <div class="img1">
-                                <img src="~/img/download.png" class="float-left">
+                            <div class="row">
+                                <div class="img col-xs-4"></div>
+                                <div class="img1 col-xs-4">
+                                    <img src="~/img/download.png" class="float-left">
+                                </div>
+                                <div class="img col-xs-4"></div>
                             </div>
                             <h3>Download Free/Paid Notes</h3>
                             <p>Get Material for your<br> cource etc.</p>
                             <div>
-                                @Html.ActionLink("Download","SearchNotes","Notes",routeValues:null,htmlAttributes: new { @class = "btn btn-general btn-home" });
+                                <a class="btn btn-general btn-home" href=@Url.Action("SearchNotes","Notes") title="Download" role="button">DOWNLOAD</a>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-6 col-sm-6 col-xs-12">
                         <div class="about-item text-center">
-                            <div class="img1">
-                                <img src="~/img/seller.png" class="float-left">
+                            <div class="row">
+                                <div class="img col-xs-4"></div>
+                                <div class="img1 col-xs-4">
+                                    <img src="~/img/seller.png" class="float-left">
+                                </div>
+                                <div class="img col-xs-4"></div>
                             </div>
                             <h3>Seller</h3>
                             <p>Upload and Download Cource<br>and Materials etc.</p>
                             <div>
-                                @Html.ActionLink("Sell Note", "ViewNotes", "Notes", routeValues: null, htmlAttributes: new { @class = "btn btn-general btn-home" });
+                                <a class="btn btn-general btn-home" href=@Url.Action("ViewNotes","Notes") title="Sell Books" role="button">SELL BOOKS</a>
                             </div>
                         </div>
                     </div>
@@ -155,23 +160,24 @@
         </div>
     </section>
 
-    <!--Testimonial-->
+    <!--Testimonials-->
     <section id="testimonials">
+
         <div class="container">
             <div class="row">
                 <div class="horizontal-heading text-center">
-                    <h1>What Our Customers are Saying</h1>
+                    <h2>What Our Customers are Saying</h2>
                 </div>
             </div>
         </div>
-        <div class="container testimonial">
+        <div class="container-fluid testimonial">
             <div class="row testimonial-1">
-                <div class="col-md-5 col-sm-12 col-xs-12 testimonial-item">
+                <div class="col-md-5 col-sm-4 col-xs-12 testimonial-item">
                     <div class="row">
-                        <div class="col-md-3 col-sm-2 col-xs-2">
+                        <div class="col-md-3 col-sm-2 col-xs-3">
                             <img src="~/img/customer-1.png">
                         </div>
-                        <div class="col-md-8 col-sm-10 col-xs-10">
+                        <div class="col-md-8 col-sm-10 col-xs-8">
                             <h3>Walter Meller</h3>
                             <h6>Founder & CEO Matrix Group</h6>
                         </div>
@@ -180,12 +186,12 @@
                         <p>"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus asperiores excepturi iste amet optio quibusdam cumque eos impedit illum eum, repellendus ipsam, autem, distinctio."</p>
                     </div>
                 </div>
-                <div class="col-md-5 col-sm-12 col-xs-12 testimonial-item testimonial-item-2">
+                <div class="col-md-5 col-sm-4 col-xs-12 testimonial-item testimonial-item-2">
                     <div class="row">
-                        <div class="col-md-3 col-sm-2 col-xs-2">
+                        <div class="col-md-3 col-sm-2 col-xs-3">
                             <img src="~/img/customer-2.png">
                         </div>
-                        <div class="col-md-8 col-sm-10 col-xs-10">
+                        <div class="col-md-8 col-sm-10 col-xs-8">
                             <h3>Walter Meller</h3>
                             <h6>Founder & CEO Matrix Group</h6>
                         </div>
@@ -199,10 +205,10 @@
             <div class="row testimonial-2">
                 <div class="col-md-5 col-sm-12 col-xs-12 testimonial-item">
                     <div class="row">
-                        <div class="col-md-3 col-sm-2 col-xs-2">
+                        <div class="col-md-3 col-sm-2 col-xs-3">
                             <img src="~/img/customer-3.png">
                         </div>
-                        <div class="col-md-8 col-sm-10 col-xs-10">
+                        <div class="col-md-8 col-sm-10 col-xs-8">
                             <h3>Walter Meller</h3>
                             <h6>Founder & CEO Matrix Group</h6>
                         </div>
@@ -213,10 +219,10 @@
                 </div>
                 <div class="col-md-5 col-sm-12 col-xs-12 testimonial-item testimonial-item-2">
                     <div class="row">
-                        <div class="col-md-3 col-sm-2 col-xs-2">
+                        <div class="col-md-3 col-sm-2 col-xs-3">
                             <img src="~/img/customer-4.png">
                         </div>
-                        <div class="col-md-8 col-sm-10 col-xs-10">
+                        <div class="col-md-8 col-sm-10 col-xs-8">
                             <h3>Walter Meller</h3>
                             <h6>Founder & CEO Matrix Group</h6>
                         </div>
@@ -229,6 +235,7 @@
         </div>
     </section>
 
+    <hr>
     <!--Footer-->
     <footer id="footer">
         <div class="container">
@@ -247,41 +254,39 @@
         </div>
     </footer>
 
-
     <!--Scripts-->
     <!--jQuery-->
-
-    <script src="js/jquery.js"></script>
+    <script src="~/js/jquery.js"></script>
 
     <!--Bootstrap-->
-    <script src="js/Bootstrap/bootstrap.min.js"></script>
+    <script src="~/js/Bootstrap/bootstrap.js"></script>
 
-    <script src="js/easing/easing.min.js"></script>
+    <script src="~/js/easing/easing.js"></script>
 
-    <script src="js/script.js"></script>
+    <!--Custom JS-->
+    <script src="~/js/script.js"></script>
+
     <script>
         $(function () {
+            showHideNav();
             $(window).scroll(function () {
                 showHideNav();
             });
-            function showHideNav() {
-                if ($(window).scrollTop() > 50) {
+            function showHideNav()
+            {
+                if ($(window).scrollTop()>50) {
                     $("nav").addClass("white-nav-top");
-                    $(".link img").attr("src", "~/img/logo.png");
-                   // $("#back-to-top").fadeIn();
+                    $(".navbar-brand img").attr("src", "img/logo.png");
+                    $("#back-to-top").fadeIn();
                 }
                 else {
                     $("nav").removeClass("white-nav-top");
-                    $(".link img").attr("src", "~/img/top-logo.png");
-                    //$("#back-to-top").fadeOut();
+                    $(".navbar-brand img").attr("src", "img/top-logo.png");
+                    $("#back-to-top").fadeOut();
                 }
             }
-            //showHideNav();
-
             
-
         });
-
     </script>
 
 </body>

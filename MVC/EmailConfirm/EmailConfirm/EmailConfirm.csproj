@@ -52,6 +52,9 @@
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -107,9 +110,6 @@
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
     </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
     <Reference Include="WebGrease">
       <Private>True</Private>
       <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
@@ -163,9 +163,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Model.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\ChangePassword.cs" />
     <Compile Include="Models\contactus.cs" />
-    <Compile Include="Models\EmpModel.cs" />
+    <Compile Include="Models\CountData.cs" />
+    <Compile Include="Models\RejectNote.cs" />
     <Compile Include="Models\Login.cs" />
+    <Compile Include="Models\Members.cs" />
     <Compile Include="Models\RegDetail.cs" />
     <Compile Include="Models\Register.cs" />
     <Compile Include="NoteCatgory.cs">
@@ -175,9 +178,6 @@
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RefernceData.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
     <Compile Include="Register.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
@@ -194,12 +194,6 @@
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="SellNote.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="SystemConfiguration.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Table.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="UserProfile.cs">
@@ -220,7 +214,9 @@
     <Content Include="css\font-awesome\css\font-awesome.min.css" />
     <Content Include="css\responsive.css" />
     <Content Include="css\responsive.min.css" />
+    <Content Include="css\responsive1.min.css" />
     <Content Include="css\style.min.css" />
+    <Content Include="css\style1.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -307,6 +303,7 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="img\sample.pdf" />
+    <Content Include="libman.json" />
     <EntityDeploy Include="Model.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Model.Designer.cs</LastGenOutput>
@@ -314,7 +311,6 @@
     <Content Include="Model.edmx.diagram">
       <DependentUpon>Model.edmx</DependentUpon>
     </Content>
-    <Content Include="libman.json" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -338,7 +334,6 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\RegisterUser\Register.cshtml" />
     <Content Include="Views\Shared\css_js.cshtml" />
@@ -357,12 +352,20 @@
     <Content Include="Views\Notes\SoldNotes.cshtml" />
     <Content Include="Views\RegisterUser\ForgotPassword.cshtml" />
     <Content Include="Views\Admin\NoteUnderReview.cshtml" />
-    <Content Include="Views\Admin\RejectNote.cshtml" />
     <Content Include="Views\RegisterUser\Activation.cshtml" />
     <Content Include="Views\Shared\AdminNav.cshtml" />
     <Content Include="Views\Admin\AdminPublishNote.cshtml" />
     <Content Include="Views\Admin\AdminDownloadNote.cshtml" />
     <Content Include="Views\Admin\AdminRejectNote.cshtml" />
+    <Content Include="Views\RegisterUser\ChangePassword.cshtml" />
+    <Content Include="Views\Admin\Members.cshtml" />
+    <Content Include="Views\Admin\MemberDetails.cshtml" />
+    <Content Include="Views\Notes\updateNote.cshtml" />
+    <Content Include="Views\Admin\partialRejectView.cshtml" />
+    <Content Include="Views\Admin\About.cshtml" />
+    <Content Include="Views\Admin\partialUnpublishedView.cshtml" />
+    <Content Include="Views\RegisterUser\UpdateProfile.cshtml" />
+    <Content Include="Views\Notes\RejectNotes.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

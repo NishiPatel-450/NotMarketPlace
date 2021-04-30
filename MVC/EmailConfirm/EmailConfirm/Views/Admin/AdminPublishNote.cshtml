@@ -1,4 +1,4 @@
-﻿@model IEnumerable<EmailConfirm.SellNote>
+﻿@model IEnumerable<EmailConfirm.Models.CountData>
 
 @{
     ViewBag.Title = "AdminPublishNote";
@@ -9,77 +9,124 @@
 
 
 <section id="dashboard">
-    <div class="heading-bar container">
+    <div class="container">
         <div class="row">
-            <div class="col-md-4 col-sm-4 col-xs-12">
-                <h3 class="row">Published Notes</h3>
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <h2 class="row" style="color:#6255a5">Published Notes</h2>
             </div>
-            <div class="col-md-8 col-sm-6 col-xs-12">
-                <form role="form" class="row form1">
-                    <div class="col-md-6 col-sm-9 col-xs-7 form-group has-feedback has-feedback-left">
-                        <img src="Images/img/search-icon.png" class="form-control-feedback">
-                        <input type="search" class="form-control" placeholder="Search" />
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                @using (Html.BeginForm("AdminPublishNote", "Admin", FormMethod.Get, new { @class = "form1 row" }))
+                {
+                    <div class="col-md-12">
+                        <span>Seller</span>
                     </div>
-                    <div class="col-md-3 col-sm-3 col-xs-2">
+                    <div class="col-md-7 col-sm-2 col-xs-12">
+                        @Html.DropDownList("list", new SelectList(ViewBag.list, "Text", "Text", ViewBag.list), "select", new { onchange = "form.submit();", @class = "form-select" })
+                    </div>
+                    <div class="col-md-3 col-sm-7 col-xs-7 form-group searchinput">
+                        <img src="~/img/search-icon.png" class="form-control-feedback">
+                        <input type="search" class="form-control" placeholder="Search" name="searching" />
+                    </div>
+                    <div class="col-md-2 col-sm-3 col-xs-2">
                         <button class="btn">SEARCH</button>
                     </div>
-                    <div class="col-md-3 col-sm-2 col-xs-12 text-right">
-                        <select class="form-select">
-                            <option>select month</option>
-                        </select>
-                    </div>
-                </form>
+
+                }
             </div>
         </div>
     </div>
-
-    <div class="sold-table-list">
-        <div class="container">
-            <div class="row">
-                <table class="table col-md-12 col-sm-12 col-xs-12">
-                    <tr>
-                        <th>SR NO.</th>
-                        <th>TITLE</th>
-                        <th>CATEGORY</th>
-                        <th>ATTACHMENT SIZE</th>
-                        <th>SELL TYPE</th>
-                        <th>PRICE</th>
-                        <th>PUBLISHER</th>
-                        <th>PUBLISHED DATE</th>
-                        <th>NUMBER OF DOWNLOADS</th>
-                        <th></th>
-                    </tr>
-                    @foreach (var item in Model)
-                    {
+    
+        <div class="sold-table-list">
+            <div class="container">
+                <div class="row">
+                    <table class="table col-md-12 col-sm-12 col-xs-12">
                         <tr>
-                            <td>@item.Id</td>
-                            <td class="titile-text">@item.title</td>
-                            <td>@item.Category</td>
-                            <td>10KB</td>
-                            <td>Free</td>
-                            <td>@item.SellingPrice</td>
-                            <td>Pritesh Panchal</td>
-                            <td>09-10-2020,10:10</td>
-                            <td>10</td>
-                            <td><img src="~/img/dots.png"></td>
+                            <th>SR NO.</th>
+                            <th>TITLE</th>
+                            <th>CATEGORY</th>
+                            <th>ATTACHMENT SIZE</th>
+                            <th>PRICE</th>
+                            <th>PUBLISHER</th>
+                            <th>PUBLISHED DATE</th>
+                            <th>NUMBER OF DOWNLOADS</th>
+                            <th></th>
                         </tr>
-                    }
-                </table>
-                
+                        @if (Model.Count() == 0)
+                        {
+                            <tr>
+                                <td colspan="10" style="color:red;text-align:center">Data Not Found</td>
+                            </tr>
+                        }
+                        else
+                        {
+                            foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>@item.id</td>
+                                    <td class="titile-text">@item.title</td>
+                                    <td>@item.cate</td>
+                                    <td>@item.size</td>
+                                    <td>@item.price</td>
+                                    <td>@item.publisher</td>
+                                    <td>@item.date</td>
+                                    <td>@item.no_dow</td>
+                                    <td>
+                                        <ul class="nav navbar-nav">
+                                            <li class="dropdown">
+                                                <a href="#"><img src="~/img/dots.png" /></a>
+                                                <ul>
+                                                    <li>@Html.ActionLink("Download Notes", "AdminDownloadNote", "Admin", new { @class = "link menulink" })</li>
+                                                    <li>@Html.ActionLink("View Details", "NoteDetails", "Notes", new { @class = "link menulink", id = item.title }, null)</li>
+                                                    <li><a href='#' class='link menulink' onclick="unpublishenote(@item.id)">Unpublished</a></li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                            }
+                        }
+                    </table>
+
+                </div>
+
+            </div>
+        </div>
+
+</section>
+
+<script src="~/js/jquery.js"></script>
+<link href="~/css/Bootstrap/bootstrap.min.css" rel="stylesheet" />
+<script src="~/js/Bootstrap/bootstrap.js"></script>
+
+<div class="container" style="width:40%;">
+
+
+    <div class="modal fade" id="myModal2">
+        <div class="modal-dialog">
+            <div class="modal-content" id="myModalBodyDiv2">
+
+
             </div>
 
         </div>
+
     </div>
 
-    <div class="container page" aria-label="Page navigation example">
-        <ul class="pagination">
-            <li><a class="page-link-img" href="#"><img src="~/img/left-arrow.png"></a></li>
-            <li><a class="page-link" href="#">1</a></li>
-            <li><a class="page-link" href="#">2</a></li>
-            <li><a class="page-link" href="#">3</a></li>
-            <li><a class="page-link" href="#">4</a></li>
-            <li><a class="page-link" href="#">5</a></li>
-            <li><a class="page-link-img" href="#"><img src="~/img/right-arrow.png"></a></li>
-        </ul>
-    </div>
-</section>
+    <input type="hidden" id="hiddenEmployeeId" />
+
+
+</div>
+
+<script>
+
+    var unpublishenote = function (title) {
+
+        var url = "/Admin/unpublishenote?title=" + title;
+
+        $("#myModalBodyDiv2").load(url, function () {
+            $("#myModal2").modal("show");
+
+        })
+
+    }
+</script>

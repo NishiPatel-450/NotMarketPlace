@@ -1,0 +1,87 @@
+﻿@model Tuple<List<EmailConfirm.Models.Members>, List<EmailConfirm.SellNote>>
+
+@{
+    ViewBag.Title = "Members";
+    Layout = "~/Views/Shared/css_js.cshtml";
+    Layout = "~/Views/Shared/AdminNav.cshtml";
+    WebGrid webGrid = new WebGrid(source: Model.Item2);
+}
+
+
+
+<section id="dashboard">
+    <div class="heading-bar container">
+        <div class="row">
+            <h2>Member details</h2><br>
+            <div class="col-md-2 col-sm-12 col-xs-12 text-center">
+                <img src="~/img/customer-4.png" style="height: 100px;width: 100px;margin-bottom: 20px;">
+            </div>
+            <div class="col-md-10 col-sm-12 col-xs-12">
+                <div class="row">
+                    <div class="col-md-2 col-sm-3 col-xs-6">
+                        <p>First Name</p>
+                        <p>Last Name</p>
+                        <p>Email</p>
+                        <p>DOB</p>
+                        <p>Phone Number</p>
+                        <p>Collage/University</p>
+                    </div>
+                    @foreach (var item in Model.Item1)
+                    {
+                        <div class="col-md-3 col-sm-3 col-xs-6" style="color:#6255a5;font-weight: 600">
+                            <p>@item.FirstName</p>
+                            <p>@item.LastName</p>
+                            <p>@item.Email</p>
+                            <p>@item.dob</p>
+                            <p>@item.phone</p>
+                            <p>@item.college</p>
+                        </div>
+                    }
+                    <div class="col-md-1 col-sm-1">
+                        <p style="border: 1px solid #d1d1d1;height: 160px;width: 1px;"></p>
+                    </div>
+                    <div class="col-md-2 col-sm-2 col-xs-6">
+                        <p>Address 1:</p>
+                        <p>Address 2:</p>
+                        <p>City :</p>
+                        <p>State :</p>
+                        <p>Country :</p>
+                        <p>Zip Code :</p>
+                    </div>
+                    @foreach (var item in Model.Item1)
+                    {
+                        <div class="col-md-3 col-sm-3 col-xs-6" style="color:#6255a5;font-weight: 600;">
+                            <p>@item.address1<p>
+                            <p>@item.address2<p>
+                            <p>@item.city<p>
+                            <p>@item.state<p>
+                            <p>@item.country<p>
+                            <p>@item.zipcode<p>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+
+        <hr>
+        <div class="row">
+            <div class="col-md-6">
+                <h3 class="row">Notes</h3>
+            </div>
+        </div>
+        <div class="row sold-table-list">
+            @webGrid.GetHtml(
+                         htmlAttributes: new { @id = "WebGrid", @class = "Grid table sold-table-list" },
+                         columns: webGrid.Columns(webGrid.Column("Id","Sr.No"),
+                         webGrid.Column("title", "Note Title"),
+                         webGrid.Column("Category", "Note Category"),
+                         webGrid.Column("Status", "Status"),
+                         webGrid.Column("", style: "Image",
+                             format: @<text><img src="~/img/dots.png" /></text>
+)
+))
+        </div>
+    </div>
+
+</section>
+

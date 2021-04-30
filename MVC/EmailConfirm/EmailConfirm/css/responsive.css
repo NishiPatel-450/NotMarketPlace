@@ -20,7 +20,7 @@
     cursor: pointer;
     position: absolute;
     top: 0;
-    right::;
+    right:0;
     -webkit-transition: .3s;
     transition: .3s;
 }

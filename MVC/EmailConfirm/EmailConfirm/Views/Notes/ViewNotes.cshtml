@@ -1,9 +1,11 @@
-﻿@model IEnumerable<EmailConfirm.SellNote>
+﻿@model Tuple<List<EmailConfirm.SellNote>,List<EmailConfirm.SellNote>>
 
 @{
     ViewBag.Title = "Dashboard";
     Layout = "~/Views/Shared/css_js.cshtml";
     Layout = "~/Views/Shared/Nav.cshtml";
+    WebGrid webGrid = new WebGrid(source: Model.Item1);
+    WebGrid webGrid1 = new WebGrid(source: Model.Item2);
 }
 <br />
 <br />
@@ -28,29 +30,29 @@
                     <img src="~/img/earning-icon.svg">
                     <h3 class="earning">My Earning</h3>
                 </button>
-                <button class="card-03 col-md-4 col-sm-6 col-xs-6" style="background-color: #fff;" formaction="sold_notes.html">
+                <button class="card-03 col-md-4 col-sm-6 col-xs-6" style="background-color: #fff;" formaction=@Url.Action("SoldNotes","Notes")>
                     <div class="row">
-                        <a class="col-md-6 col-sm-6 col-xs-6 sold text-center" href="sold_notes.html">
-                            <h3>100</h3>
+                        <a class="col-md-6 col-sm-6 col-xs-6 sold text-center" href=@Url.Action("SoldNotes","Notes")>
+                            <h3>@ViewBag.download</h3>
                             <p>Number of Notes Sold</p>
                         </a>
-                        <a class="col-md-6 col-sm-6 col-xs-6 money text-center">
-                            <h3>$10,00,000</h3>
+                        <a class="col-md-6 col-sm-6 col-xs-6 money text-center" href=@Url.Action("SoldNotes","Notes")>
+                            <h3>$@Model.Item2.Sum(x =>x.SellingPrice) </h3>
                             <p>Money Earned</p>
                         </a>
                     </div>
                 </button>
-                <button class="card-02 col-md-1 col-sm-4 col-xs-4 text-center" style="background-color: #fff;" formaction="download_notes.html">
-                    <h3>38</h3>
+                <button class="card-02 col-md-1 col-sm-4 col-xs-4 text-center" style="background-color: #fff;" formaction=@Url.Action("DownloadNotes","Notes")>
+                    <h3>@ViewBag.download</h3>
                     <p>My Downloads</p>
                 </button>
-                <button class="card-02 col-md-1 col-sm-4 col-xs-4 text-center" style="background-color: #fff;" formaction="rejected_notes.html">
-                    <h3>12</h3>
+                <button class="card-02 col-md-1 col-sm-4 col-xs-4 text-center" style="background-color: #fff;" formaction=@Url.Action("SoldNotes","Notes")>
+                    <h3>@ViewBag.reject</h3>
                     <p>My Rejected Notes</p>
                 </button>
                 <button class="card-02 col-md-1 col-sm-4 col-xs-4 text-center" style="background-color: #fff;"
-                        formaction="buyer_request.html">
-                    <h3>102</h3>
+                        formaction=@Url.Action("BuyerReqest","Notes")>
+                    <h3>@ViewBag.buyer</h3>
                     <p>Buyer Request</p>
                 </button>
             </form>
@@ -58,96 +60,98 @@
     </div>
 </section>
 
-
 <br>
+<section id="publish-notes">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-7 col-sm-4 col-xs-12">
+                <h2 class="row">In Progress Notes</h2>
+            </div>
+            <div class="col-md-5 col-sm-6 col-xs-12">
+                @using (Html.BeginForm("ViewNotes", "Notes", FormMethod.Get, new { @class = "form1 row" }))
+                {
+                    <div class="col-md-9 col-sm-7 col-xs-7 form-group searchinput">
+                        <img src="~/img/search-icon.png" class="form-control-feedback">
+                        <input type="text" class="form-control" placeholder="Search" name="searching" />
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-xs-2">
+                        <button class="btn">SEARCH</button>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
 
-<div class="container">
-    <h4 style="color:rebeccapurple">In Progress Note</h4>
-    <table class="table">
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.title)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Category)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Status)
-            </th>
-            <th>
-                @Html.DisplayName("Action")
-            </th>
-
-
-        </tr>
-
-        @foreach (var item in Model)
+    <div class="container">
+        @if (Model.Item1.Count() == 0)
         {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.title)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Category)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Status)
-                </td>
-
-            </tr>
+            <h3>Data Not Found</h3>
         }
-
-    </table>
-</div>
-
-
-<div class="container">
-    <h4 style="color:rebeccapurple">Published Note</h4>
-    <table class="table container">
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.title)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Category)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.NoteType)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.SellingPrice)
-            </th>
-            <th>
-                @Html.DisplayName("Action")
-            </th>
-
-
-        </tr>
-
-        @foreach (var item in Model)
+        else
         {
-            <tr>
 
-                <td>
-                    @Html.DisplayFor(modelItem => item.title)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Category)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.NoteType)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.SellingPrice)
-                </td>
-                <td>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
-                    @Html.ActionLink("Details", "Details", new { id = item.Id }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = item.Id })
-                </td>
-            </tr>
+            @webGrid.GetHtml(
+                         htmlAttributes: new { @id = "WebGrid", @class = "Grid table sold-table-list" },
+                         columns: webGrid.Columns(webGrid.Column("CreatedDate", "Added-Date"),
+                         webGrid.Column("title", "Note Title"),
+                         webGrid.Column("Category", "Note Category"),
+                         webGrid.Column("Status", "Status"),
+                         webGrid.Column("Action", format:(item)=>
+                         {
+                             if(item.Status =="Draft")
+                             {
+                                 return Html.Raw(string.Format("<text><a \"target=\"_blank\" href=\"updateNote?id={0}\"><img height='20' width='20' border='0' src=\"/img/edit.png\" alt=\"Image\"/><a \"target=\"_blank\" href=\"deleteNote?id={0}\"><img height='20' width='20' border='0' src=\"/img/delete.png\" alt=\"Image\"/></text>", @item.id));
+                             }
+                             else
+                             {
+                                 return Html.Raw(string.Format("<text><a \"target=\"_blank\" href=\"NoteDetails?id={0}\"><img height='20' width='20' border='0' src=\"/img/eye.png\" alt=\"Image\"/></text>", @item.title));
+                             }
+                         })
+
+            ))
         }
+    </div>
 
-    </table>
-</div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-7 col-sm-4 col-xs-12">
+                <h2 class="row">Publish Notes</h2>
+            </div>
+            <div class="col-md-5 col-sm-6 col-xs-12">
+                @using (Html.BeginForm("ViewNotes", "Notes", FormMethod.Get, new { @class = "form1 row" }))
+                {
+                    <div class="col-md-9 col-sm-7 col-xs-7 form-group searchinput">
+                        <img src="~/img/search-icon.png" class="form-control-feedback">
+                        <input type="text" class="form-control" placeholder="Search" name="search1" />
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-xs-2">
+                        <button class="btn">SEARCH</button>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        @if (Model.Item2.Count() == 0)
+        {
+            <h3>Data Not Found</h3>
+        }
+        else
+        {
+
+            @webGrid1.GetHtml(
+                         htmlAttributes: new { @id = "WebGrid1", @class = "Grid1 table sold-table-list" },
+                         columns: webGrid1.Columns(webGrid1.Column("title", "Note Title"),
+                         webGrid1.Column("Category", "Note Category"),
+                         webGrid1.Column("NoteType", "Note Type"),
+                         webGrid1.Column("SellingPrice", "SellingPrice"),
+                         webGrid1.Column("Action", format: (item) => {
+                             return Html.Raw(string.Format("<text><a \"target=\"_blank\" href=\"NoteDetails?id={0}\"><img height='20' width='20' border='0' src=\"/img/eye.png\" alt=\"Image\"/></text>", @item.title));
+                         }
+)
+))
+        }
+    </div>
+</section>
 

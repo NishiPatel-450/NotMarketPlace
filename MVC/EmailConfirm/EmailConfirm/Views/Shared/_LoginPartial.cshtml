@@ -39,26 +39,34 @@
     <li>@Html.ActionLink("Contact Us", "Contact", "Home", routeValues: null, htmlAttributes: new { id = "contactlink" })</li>
     @if (User.Identity.IsAuthenticated)
     {
-        
+
         <li class="dropdown">
-    
-            <a href="#"><img src="~/img/user-img.png"/></a>
+
+            <a href="#"><img src="~/img/user-img.png" /></a>
             <ul>
                 <li>@Html.ActionLink("My Profile", "UserProfile", "RegisterUser", routeValues: null, htmlAttributes: new { @class = "link menulink" })</li>
                 <li>@Html.ActionLink("My Downloads", "DownloadNotes", "Notes", routeValues: null, htmlAttributes: new { @class = "link menulink" })</li>
                 <li>@Html.ActionLink("My Sold Notes", "SoldNotes", "Notes", routeValues: null, htmlAttributes: new { @class = "link menulink" })</li>
-                <li>@Html.ActionLink("My Rejected Notes", "Logout", "RegisterUser", routeValues: null, htmlAttributes: new { @class = "link menulink" })</li>
-                <li>@Html.ActionLink("Change Password", "Logout", "RegisterUser", routeValues: null, htmlAttributes: new { @class = "link menulink" })</li>
+                <li>@Html.ActionLink("My Rejected Notes", "RejectNotes", "Notes", routeValues: null, htmlAttributes: new { @class = "link menulink" })</li>
+                <li>@Html.ActionLink("Change Password", "ChangePassword", "RegisterUser", routeValues: null, htmlAttributes: new { @class = "link menulink" })</li>
                 <li class="logout">
                     @Html.ActionLink("Logout", "Logout", "RegisterUser", routeValues: null, htmlAttributes: new { @class = "link" })
                 </li>
             </ul>
         </li>
-        <li>@Html.ActionLink("Logout", "Logout", "RegisterUser", routeValues: null, htmlAttributes: new { id = "logoutlink", @class = "btn" });</li>
+        <li>
+            <div id="home-btn">
+                <a class="btn" href=@Url.Action("Logout", "RegisterUser") title="Login" role="button">Logout</a>
+            </div>
+        </li>
     }
     else
     {
-        <li>@Html.ActionLink("Log in", "Login", "RegisterUser", routeValues: null, htmlAttributes: new { id = "loginLink", @class = "btn" })</li>
+        <li>
+            <div id="home-btn">
+                <a class="btn" href=@Url.Action("Login", "RegisterUser") title="Login" role="button">Login</a>
+            </div>
+        </li>
     }
 </ul>
 

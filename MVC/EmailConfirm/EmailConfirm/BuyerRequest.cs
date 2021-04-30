@@ -24,7 +24,7 @@ namespace EmailConfirm
         public string PhoneNo { get; set; }
         public Nullable<System.DateTime> DownloadDateTime { get; set; }
     
-        public virtual UserProfile UserProfile { get; set; }
         public virtual SellNote SellNote { get; set; }
+        public virtual UserProfile UserProfile { get; set; }
     }
 }

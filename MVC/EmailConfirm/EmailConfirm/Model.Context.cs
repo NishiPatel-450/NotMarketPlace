@@ -31,16 +31,13 @@ namespace EmailConfirm
         public virtual DbSet<FileDetail> FileDetails { get; set; }
         public virtual DbSet<NoteCatgory> NoteCatgories { get; set; }
         public virtual DbSet<NoteType> NoteTypes { get; set; }
-        public virtual DbSet<RefernceData> RefernceDatas { get; set; }
         public virtual DbSet<Register> Registers { get; set; }
+        public virtual DbSet<RejectedNote> RejectedNotes { get; set; }
         public virtual DbSet<SellerNotesAttachement> SellerNotesAttachements { get; set; }
         public virtual DbSet<SellerNotesReportedIssue> SellerNotesReportedIssues { get; set; }
         public virtual DbSet<SellerNotesReview> SellerNotesReviews { get; set; }
         public virtual DbSet<SellNote> SellNotes { get; set; }
-        public virtual DbSet<SystemConfiguration> SystemConfigurations { get; set; }
-        public virtual DbSet<UserProfile> UserProfiles { get; set; }
         public virtual DbSet<UserRole> UserRoles { get; set; }
-        public virtual DbSet<Table> Tables { get; set; }
-        public virtual DbSet<RejectedNote> RejectedNotes { get; set; }
+        public virtual DbSet<UserProfile> UserProfiles { get; set; }
     }
 }
